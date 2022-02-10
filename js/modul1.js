@@ -260,12 +260,34 @@
 // console.log(getShippingCost('Sweden'));
 
 // ==============Автопроверка 1 модуль задача 30==========
-function getNameLength(name) {
-  const message = `Name ${name} is ${name.length} characters long`; // Change this line
+// function getNameLength(name) {
+//   const message = `Name ${name} is ${name.length} characters long`; // Change this line
 
-  return message;
-}
-console.log(getNameLength('Poly'));
-console.log(getNameLength('Harambe'));
-console.log(getNameLength('Billy'));
-console.log(getNameLength('Joe'));
+//   return message;
+// }
+// console.log(getNameLength('Poly'));
+// console.log(getNameLength('Harambe'));
+// console.log(getNameLength('Billy'));
+// console.log(getNameLength('Joe'));
+
+// ==============Автопроверка 1 модуль задача 31==========
+// Дополни код присвоив объявленным переменным выражения
+// обращения к соответствующим элементам или с
+// войствам строки в переменной course.
+
+// courseTopicLength - длина строки.
+// firstElement - первый символ строки.
+// lastElement - последний символ строки.
+
+const courseTopic = 'JavaScript essentials';
+// Change code below this line
+
+const courseTopicLength = courseTopic.length;
+const firstElement = courseTopic[0];
+const lastElement =
+  courseTopic[courseTopic.length - 1];
+
+// Change code above this line
+console.log(courseTopicLength);
+console.log(firstElement);
+console.log(lastElement);
