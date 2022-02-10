@@ -340,28 +340,71 @@
 // Пусть функция строго относится к регистру букв, то есть «Петя» и «петя»
 // для неё разные имена.
 
-function checkForName(fullName, name) {
-  const result = fullName.includes(name); // Change this line
+// function checkForName(fullName, name) {
+//   const result = fullName.includes(name); // Change this line
+//   return result;
+// }
+// console.log(
+//   checkForName('Egor Kolbasov', 'Egor')
+// );
+// console.log(
+//   checkForName('EEgor Kolbasov', 'egor')
+// );
+// console.log(
+//   checkForName('Egor Kolbasov', 'egOr')
+// );
+// console.log(
+//   checkForName('Egor Kolbasov', 'Zhenya')
+// );
+// console.log(
+//   checkForName('Vadim Nekrasov', 'Vadim')
+// );
+// console.log(
+//   checkForName('Vadim Nekrasov', 'vadim')
+// );
+// console.log(
+//   checkForName('Vadim Nekrasov', 'Dima')
+// );
+
+// ==============Автопроверка 1 модуль задача 36==========
+// Функция checkForSpam(message) принимает строку(параметр message),
+// проверяет её на содержание запрещенных слов spam и sale,
+// и возвращает результат проверки.Слова в строке параметра message
+// могут быть в произвольном регистре, например SPAM или sAlE.
+
+// Если нашли запрещенное слово (spam или sale) то функция возвращает буль true.
+// Если в строке нет запрещенных слов, функция возвращает буль false.
+function checkForSpam(message) {
+  let result;
+  // Change code below this line
+  result =
+    message.toLowerCase().includes('spam') ||
+    message.toLowerCase().includes('sale');
+  // Change code above this line
   return result;
 }
 console.log(
-  checkForName('Egor Kolbasov', 'Egor')
+  checkForSpam('Latest technology news')
 );
 console.log(
-  checkForName('EEgor Kolbasov', 'egor')
+  checkForSpam('JavaScript weekly newsletter')
 );
 console.log(
-  checkForName('Egor Kolbasov', 'egOr')
+  checkForSpam('Get best sale offers now!')
 );
 console.log(
-  checkForName('Egor Kolbasov', 'Zhenya')
+  checkForSpam('Amazing SalE, only tonight!')
 );
 console.log(
-  checkForName('Vadim Nekrasov', 'Vadim')
+  checkForSpam(
+    'Trust me, this is not a spam message'
+  )
 );
 console.log(
-  checkForName('Vadim Nekrasov', 'vadim')
+  checkForSpam(
+    'Get rid of sPaM emails. Our book in on sale!'
+  )
 );
 console.log(
-  checkForName('Vadim Nekrasov', 'Dima')
+  checkForSpam('[SPAM] How to earn fast money?')
 );
