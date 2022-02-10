@@ -318,11 +318,50 @@
 // Функция normalizeInput(input) принимает строку(параметр input)
 // и возвращает такую же строку, но в нижнем регистре.Присвой переменной
 //  normalizedInput выражение создания строки в нижнем регистре из параметра input.
-function normalizeInput(input) {
-  const normalizedInput = input.toLowerCase(); // Change this line
+// function normalizeInput(input) {
+//   const normalizedInput = input.toLowerCase(); // Change this line
 
-  return normalizedInput;
+//   return normalizedInput;
+// }
+// console.log(normalizeInput('Hello world'));
+// console.log(normalizeInput("This ISN'T SpaM"));
+// console.log(normalizeInput('Big SALE'));
+
+//  ==============Автопроверка 1 модуль задача 35==========
+// Функция checkName(fullname, name) принимает два параметра
+// и возвращает буль true или false - результат
+// проверки вхождения подстроки name в строку fullname.
+
+// fullname - полное имя состоящее из двух слов
+// (имени и фамилии) разделённых пробелом.
+// name - имя для проверки вхождения в полное имя.
+// Присвой переменной result выражение проверки
+// вхождения имени(параметр name), в полное имя(параметр fullname).
+// Пусть функция строго относится к регистру букв, то есть «Петя» и «петя»
+// для неё разные имена.
+
+function checkForName(fullName, name) {
+  const result = fullName.includes(name); // Change this line
+  return result;
 }
-console.log(normalizeInput('Hello world'));
-console.log(normalizeInput("This ISN'T SpaM"));
-console.log(normalizeInput('Big SALE'));
+console.log(
+  checkForName('Egor Kolbasov', 'Egor')
+);
+console.log(
+  checkForName('EEgor Kolbasov', 'egor')
+);
+console.log(
+  checkForName('Egor Kolbasov', 'egOr')
+);
+console.log(
+  checkForName('Egor Kolbasov', 'Zhenya')
+);
+console.log(
+  checkForName('Vadim Nekrasov', 'Vadim')
+);
+console.log(
+  checkForName('Vadim Nekrasov', 'vadim')
+);
+console.log(
+  checkForName('Vadim Nekrasov', 'Dima')
+);
