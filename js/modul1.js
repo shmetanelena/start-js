@@ -220,41 +220,52 @@
 // console.log(getDiscount(50000));
 
 // ==============Автопроверка 1 модуль задача 29==========
-function getShippingCost(country) {
-  let message;
-  const priceChina = 100;
-  const priceChile = 250;
-  const priceAustralia = 170;
-  const priceJamaica = 120;
+// function getShippingCost(country) {
+//   let message;
+//   const priceChina = 100;
+//   const priceChile = 250;
+//   const priceAustralia = 170;
+//   const priceJamaica = 120;
 
-  // Change code below this line
-  switch (country) {
-    case 'China':
-      message = `Shipping to ${country} will cost ${priceChina} credits`;
-      break;
+// Change code below this line
+//   switch (country) {
+//     case 'China':
+//       message = `Shipping to ${country} will cost ${priceChina} credits`;
+//       break;
 
-    case 'Chile':
-      message = `Shipping to ${country} will cost ${priceChile} credits`;
-      break;
+//     case 'Chile':
+//       message = `Shipping to ${country} will cost ${priceChile} credits`;
+//       break;
 
-    case 'Australia':
-      message = `Shipping to ${country} will cost ${priceAustralia} credits`;
-      break;
+//     case 'Australia':
+//       message = `Shipping to ${country} will cost ${priceAustralia} credits`;
+//       break;
 
-    case 'Jamaica':
-      message = `Shipping to ${country} will cost ${priceJamaica} credits`;
-      break;
+//     case 'Jamaica':
+//       message = `Shipping to ${country} will cost ${priceJamaica} credits`;
+//       break;
 
-    default:
-      message =
-        'Sorry, there is no delivery to your country';
-  }
-  // Change code above this line
+//     default:
+//       message =
+//         'Sorry, there is no delivery to your country';
+//   }
+//   // Change code above this line
+//   return message;
+// }
+// console.log(getShippingCost('Australia'));
+// console.log(getShippingCost('Germany'));
+// console.log(getShippingCost('China'));
+// console.log(getShippingCost('Chile'));
+// console.log(getShippingCost('Jamaica'));
+// console.log(getShippingCost('Sweden'));
+
+// ==============Автопроверка 1 модуль задача 30==========
+function getNameLength(name) {
+  const message = `Name ${name} is ${name.length} characters long`; // Change this line
+
   return message;
 }
-console.log(getShippingCost('Australia'));
-console.log(getShippingCost('Germany'));
-console.log(getShippingCost('China'));
-console.log(getShippingCost('Chile'));
-console.log(getShippingCost('Jamaica'));
-console.log(getShippingCost('Sweden'));
+console.log(getNameLength('Poly'));
+console.log(getNameLength('Harambe'));
+console.log(getNameLength('Billy'));
+console.log(getNameLength('Joe'));
