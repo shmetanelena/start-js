@@ -174,13 +174,87 @@
 // 70 покажет 01:10
 // 450 покажет 07:30
 // 1441 покажет 24:01
-const totalMinutes = 70;
+// const totalMinutes = 70;
 
-const hours = Math.floor(totalMinutes / 60);
-const minutes = totalMinutes % 60;
-console.log(hours);
-console.log(minutes);
+// const hours = Math.floor(totalMinutes / 60);
+// const minutes = totalMinutes % 60;
+// console.log(hours);
+// console.log(minutes);
 
-const doubleDigitHours = String(hours).padStart(2, 0);
-const doubleDigitMinutes = String(minutes).padStart(2, 0);
-console.log(`${doubleDigitHours}:${doubleDigitMinutes}`);
+// const doubleDigitHours = String(hours).padStart(2, 0);
+// const doubleDigitMinutes = String(minutes).padStart(2, 0);
+// console.log(`${doubleDigitHours}:${doubleDigitMinutes}`);
+
+// ==============Автопроверка 1 модуль задача 24==========
+// function getDiscount(totalSpent) {
+//   const BASE_DISCOUNT = 0;
+//   const BRONZE_DISCOUNT = 0.02;
+//   const SILVER_DISCOUNT = 0.05;
+//   const GOLD_DISCOUNT = 0.1;
+//   let discount;
+//   // Change code below this line
+//   if (totalSpent >= 50000) {
+//     discount = GOLD_DISCOUNT;
+//   } else if (
+//     20000 <= totalSpent &&
+//     totalSpent < 50000
+//   ) {
+//     discount = SILVER_DISCOUNT;
+//   } else if (
+//     5000 <= totalSpent &&
+//     totalSpent < 20000
+//   ) {
+//     discount = BRONZE_DISCOUNT;
+//   } else {
+//     discount = BASE_DISCOUNT;
+//   }
+//   // Change code above this line
+//   return discount;
+// }
+// console.log(getDiscount(137000));
+// console.log(getDiscount(46900));
+// console.log(getDiscount(8250));
+// console.log(getDiscount(1300));
+// console.log(getDiscount(5000));
+// console.log(getDiscount(20000));
+// console.log(getDiscount(50000));
+
+// ==============Автопроверка 1 модуль задача 29==========
+function getShippingCost(country) {
+  let message;
+  const priceChina = 100;
+  const priceChile = 250;
+  const priceAustralia = 170;
+  const priceJamaica = 120;
+
+  // Change code below this line
+  switch (country) {
+    case 'China':
+      message = `Shipping to ${country} will cost ${priceChina} credits`;
+      break;
+
+    case 'Chile':
+      message = `Shipping to ${country} will cost ${priceChile} credits`;
+      break;
+
+    case 'Australia':
+      message = `Shipping to ${country} will cost ${priceAustralia} credits`;
+      break;
+
+    case 'Jamaica':
+      message = `Shipping to ${country} will cost ${priceJamaica} credits`;
+      break;
+
+    default:
+      message =
+        'Sorry, there is no delivery to your country';
+  }
+  // Change code above this line
+  return message;
+}
+console.log(getShippingCost('Australia'));
+console.log(getShippingCost('Germany'));
+console.log(getShippingCost('China'));
+console.log(getShippingCost('Chile'));
+console.log(getShippingCost('Jamaica'));
+console.log(getShippingCost('Sweden'));
