@@ -279,15 +279,38 @@
 // firstElement - первый символ строки.
 // lastElement - последний символ строки.
 
-const courseTopic = 'JavaScript essentials';
-// Change code below this line
+// const courseTopic = 'JavaScript essentials';
+// // Change code below this line
 
-const courseTopicLength = courseTopic.length;
-const firstElement = courseTopic[0];
-const lastElement =
-  courseTopic[courseTopic.length - 1];
+// const courseTopicLength = courseTopic.length;
+// const firstElement = courseTopic[0];
+// const lastElement =
+//   courseTopic[courseTopic.length - 1]; //послкдний символ в строке
 
-// Change code above this line
-console.log(courseTopicLength);
-console.log(firstElement);
-console.log(lastElement);
+// // Change code above this line
+// console.log(courseTopicLength);
+// console.log(firstElement);
+// console.log(lastElement);
+
+// Функция getSubstring(string, length) принимает строку и
+// возвращает подстроку от начала и до length символов.
+// Она объявляет два параметра, значения которых будут
+// задаваться во время её вызова:
+
+// string - оригинальная строка
+// length - количество символов с начала строки для подстроки
+// Присвой переменной substring выражение создания
+// подстроки длинной length символов(от начала) из строки string.
+
+// ==============Автопроверка 1 модуль задача 31==========
+
+function getSubstring(string, length) {
+  const substring = string.slice(0, length); // Change this line
+
+  return substring;
+}
+console.log(getSubstring('Hello world', 3));
+console.log(getSubstring('Hello world', 6));
+console.log(getSubstring('Hello world', 8));
+console.log(getSubstring('Hello world', 11));
+console.log(getSubstring('Hello world', 0));
