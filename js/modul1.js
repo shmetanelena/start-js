@@ -292,6 +292,7 @@
 // console.log(firstElement);
 // console.log(lastElement);
 
+// ==============Автопроверка 1 модуль задача 32==========
 // Функция getSubstring(string, length) принимает строку и
 // возвращает подстроку от начала и до length символов.
 // Она объявляет два параметра, значения которых будут
@@ -302,15 +303,26 @@
 // Присвой переменной substring выражение создания
 // подстроки длинной length символов(от начала) из строки string.
 
-// ==============Автопроверка 1 модуль задача 31==========
+// function getSubstring(string, length) {
+//   const substring = string.slice(0, length); // Change this line
 
-function getSubstring(string, length) {
-  const substring = string.slice(0, length); // Change this line
+//   return substring;
+// }
+// console.log(getSubstring('Hello world', 3));
+// console.log(getSubstring('Hello world', 6));
+// console.log(getSubstring('Hello world', 8));
+// console.log(getSubstring('Hello world', 11));
+// console.log(getSubstring('Hello world', 0));
 
-  return substring;
+// ==============Автопроверка 1 модуль задача 34==========
+// Функция normalizeInput(input) принимает строку(параметр input)
+// и возвращает такую же строку, но в нижнем регистре.Присвой переменной
+//  normalizedInput выражение создания строки в нижнем регистре из параметра input.
+function normalizeInput(input) {
+  const normalizedInput = input.toLowerCase(); // Change this line
+
+  return normalizedInput;
 }
-console.log(getSubstring('Hello world', 3));
-console.log(getSubstring('Hello world', 6));
-console.log(getSubstring('Hello world', 8));
-console.log(getSubstring('Hello world', 11));
-console.log(getSubstring('Hello world', 0));
+console.log(normalizeInput('Hello world'));
+console.log(normalizeInput("This ISN'T SpaM"));
+console.log(normalizeInput('Big SALE'));
