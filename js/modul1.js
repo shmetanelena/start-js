@@ -374,37 +374,145 @@
 
 // Если нашли запрещенное слово (spam или sale) то функция возвращает буль true.
 // Если в строке нет запрещенных слов, функция возвращает буль false.
-function checkForSpam(message) {
-  let result;
-  // Change code below this line
-  result =
-    message.toLowerCase().includes('spam') ||
-    message.toLowerCase().includes('sale');
-  // Change code above this line
-  return result;
+// function checkForSpam(message) {
+//   let result;
+//   // Change code below this line
+//   result =
+//     message.toLowerCase().includes('spam') ||
+//     message.toLowerCase().includes('sale');
+//   // Change code above this line
+//   return result;
+// }
+// console.log(
+//   checkForSpam('Latest technology news')
+// );
+// console.log(
+//   checkForSpam('JavaScript weekly newsletter')
+// );
+// console.log(
+//   checkForSpam('Get best sale offers now!')
+// );
+// console.log(
+//   checkForSpam('Amazing SalE, only tonight!')
+// );
+// console.log(
+//   checkForSpam(
+//     'Trust me, this is not a spam message'
+//   )
+// );
+// console.log(
+//   checkForSpam(
+//     'Get rid of sPaM emails. Our book in on sale!'
+//   )
+// );
+// console.log(
+//   checkForSpam('[SPAM] How to earn fast money?')
+// );
+
+// =============My training===========
+// for (let i = 1; i <= 10; i += 1) {
+//   console.log(i + ' qwe');
+// }
+// console.log('qweqwe');
+
+// * Напиши скрипт который подсчитывает общую сумму зарплат работников.
+// * Кол-во работников хранится в перемнной employees.
+// * Зарплата каждого работника это случайное число от 500 до 5000
+// * Записать сумму в переменную totalSalary и вывести в консоль
+
+// const minSalary = 500;
+// const maxSalary = 5000;
+// const employees = 12;
+// let totalSalary = 0;
+
+// for (let i = 1; i <= employees; i += 1) {
+//   const salary = Math.round(
+//     Math.random() * (maxSalary - minSalary) +
+//       minSalary
+//   ); //onsole.log(Math.random() * (10 - 1) + 1); // псевдослучайное число от 1 до 10
+
+//   console.log(
+//     `ЗП работника номер ${i} - ${salary}`
+//   );
+
+//   totalSalary += salary;
+// }
+
+// console.log('totalSalary: ', totalSalary);
+
+/*
+ * Напиши скрипт который подсчитывает сумму всех чётных чисел,
+ * которые входят диапазон чисел в переменных от min до max.
+ * Например, если min=0 и max=5, то диапазон 0-5, и в нём два чётных числа - 2 и 4, их сумма 6.
+ */
+
+//  1 вары
+const min = 0;
+const max = 5;
+let total = 0;
+// ========= вариант 1 ===========
+// for (let i = min; i <= max; i += 1) {
+//   console.log(i);
+//   if (i % 2 === 0) {
+//     console.log('четное', i);
+//     total += i;
+//   }
+// }
+// console.log('total: ', total);
+// ======= конец вариант 1 ===========
+
+// ========= вариант 2 ===========
+// // фор от min до max с шагом в 1
+// for (let i = min; i <= max; i += 1) {
+//   //  // проверяем остаток от деления
+//   if (i % 2 !== 0) {
+//     console.log('Не чётное: ', i);
+//     continue;
+//   }
+
+//   // пишем в сумму
+//   console.log('чётное: ', i);
+//   total += i;
+
+//   // аналог +=
+//   // total = total + i;
+// }
+
+// console.log('total: ', total);
+// // ======= конец вариант 2 ===========
+/*
+ * Напиши скрипт обработки покупки в магазине.
+ *
+ * - Баланс пользователя хранится в переменной balance
+ * - Сумма покупки хранится в переменной payment
+ *
+ * - Перед проверкой вывести сообщение:
+ * «Общая стоимость заказа [число] кредитов. Проверяем кол-во доступных средств на счету»
+ *
+ * - Если сумма покупки не превышает баланс:
+ *    - Вычесть из баланса сумму покупки
+ *    - Вывести сообщение «На счету осталось [число] кредитов»
+ * - Если сумма покупки превышает баланс:
+ *    - Вывести сообщение «На счету недостаточно средств для проведения операции!»
+ * - В конце вывести сообщение «Операция завершена»
+ */
+
+//  1 вары
+let balance = 10000;
+const payment = 2000;
+
+console.log(
+  `Общая стоимость заказа ${payment} кредитов. Проверяем кол-во доступных средств на счету`
+);
+
+if (payment <= balance) {
+  balance -= payment;
+  // balance = balance - payment
+
+  console.log('Все хорошо, снимаем деньги... Спасибо за покупку!');
+  console.log(`На счету осталось ${balance} кредитов`);
+} else {
+  console.log('На счету недостаточно средств для проведения операции!');
 }
-console.log(
-  checkForSpam('Latest technology news')
-);
-console.log(
-  checkForSpam('JavaScript weekly newsletter')
-);
-console.log(
-  checkForSpam('Get best sale offers now!')
-);
-console.log(
-  checkForSpam('Amazing SalE, only tonight!')
-);
-console.log(
-  checkForSpam(
-    'Trust me, this is not a spam message'
-  )
-);
-console.log(
-  checkForSpam(
-    'Get rid of sPaM emails. Our book in on sale!'
-  )
-);
-console.log(
-  checkForSpam('[SPAM] How to earn fast money?')
-);
+
+console.log('Операция завершена');
