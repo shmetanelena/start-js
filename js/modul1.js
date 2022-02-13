@@ -546,43 +546,53 @@
 
 // // Пиши код выше этой строки
 // console.log(link);
+
 // Example 7 - Форматирование ссылки (тернарный оператор)
 
-// Выполни рефакторинг кода задачи номер 4 используя тернарный оператор.
+// Выполни рефакторинг кода задачи номер 4 используя
+// тернарный оператор.
 
-// let link = 'https://somesite.com/about';
-// if (link.includes('my-site') && !link.endsWith('/')) {
-//   link += '/';
-// }
+// let link = 'https://my-site.com/about';
+// // if (link.includes('my-site') && !link.endsWith('/')) {
+// //   link += '/';
+// // }
+// link += link.includes('my-site') && !link.endsWith('/') ? '/' : '';
 // console.log(link);
+
 // Example 8 - if...else и логические операторы
 
-// Напиши скрипт который будет выводить в консоль браузера строку в зависимости от значения переменной hours.
+// Напиши скрипт который будет выводить в консоль браузера
+// строку в зависимости от значения переменной hours.
 
 // Если значение переменной hours:
 
 // меньше 17, выводи строку "Pending"
-// больше либо равно 17 и меньше либо равно 24, выводи строку "Expires"
+// больше либо равно 17 и меньше либо равно 24,
+// выводи строку "Expires"
 // больше 24 , выводи строку "Overdue"
-// const hours = 10;
+
+// const hours = 25;
+// if (hours <= 17) {
+//   console.log('Pending');
+// } else if (hours >= 17 && hours <= 24) {
+//   console.log('Expires');
+// } else {
+//   console.log('Overdue');
+// }
 // Example 9 - Дедлайн сдачи проекта (if...else)
 
-// Напиши скрипт для отображения времени дедлайна сдачи проекта. Используй конструкцию if...else.
+// Напиши скрипт для отображения времени дедлайна сдачи проекта.
+// Используй конструкцию if...else.
 
 // Eсли до дедлайна 0 дней - выведи строку "Сегодня"
 // Eсли до дедлайна 1 день - выведи строку "Завтра"
 // Eсли до дедлайна 2 дня - выведи строку "Послезавтра"
 // Eсли до дедлайна 3+ дней - выведи строку "Дата в будущем"
-// const daysUntilDeadline = 5;
+// const daysUntilDeadline = 0;
 // // Пиши код ниже этой строки
-// Example 10 - Дедлайн сдачи проекта (switch)
-
-// Выполни рефакторинг кода задачи номер 5 используя switch.
-
-// const daysUntilDeadline = 5;
 
 // if (daysUntilDeadline === 0) {
-//   console.log('Сегодня');
+//   console.log('Ночью спать не придется');
 // } else if (daysUntilDeadline === 1) {
 //   console.log('Завтра');
 // } else if (daysUntilDeadline === 2) {
@@ -590,20 +600,97 @@
 // } else {
 //   console.log('Дата в будущем');
 // }
+
+// Example 10 - Дедлайн сдачи проекта (switch)
+
+// Выполни рефакторинг кода задачи номер 5 используя switch.
+
+// const daysUntilDeadline = 5;
+
+// switch (daysUntilDeadline) {
+//   case 0:
+//     console.log('Сегодня спать не придется');
+//     break;
+//   case 1:
+//     console.log('Завтра');
+//     break;
+//   case 2:
+//     console.log('Послезавтра');
+//     break;
+//   default:
+//     console.log('Дата в будущем');
+//     break;
+// }
+
 // Example 11 - Цикл for
 
-// Напиши цикл for который выводит в консоль браузера числа по возрастанию от min до max, но только если число кратное 5.
+// Напиши цикл for который выводит в консоль браузера
+// числа по возрастанию от min до max,
+// но только если число кратное 5.
 
 // const max = 100;
 // const min = 20;
+// for (let i = min; i <= max; i += 1) {
+//   if (i % 5 === 0) {
+//     console.log(i);
+//   }
+// }
 // Example 12 - Ввод пользователя и ветвления
 
-// Напиши скрипт, который будет спрашивать логин с помощью prompt и логировать результат в консоль браузера.
+// Напиши скрипт, который будет спрашивать логин с помощью prompt
+// и логировать результат в консоль браузера.
 
 // Если посетитель вводит "Админ", то prompt запрашивает пароль
-// Если ничего не введено или нажата клавиша Esc - вывести строку "Отменено"
+// Если ничего не введено или нажата клавиша Esc -
+// вывести строку "Отменено"
 // В противном случае вывести строку "Я вас не знаю"
 // Пароль проверять так:
 
 // Если введён пароль "Я админ", то вывести строку "Здравствуйте!"
 // Иначе выводить строку "Неверный пароль"
+// const login = prompt('enter login');
+
+// if (login === 'Админ') {
+//   const password = prompt('enter password');
+//   if (password === 'Я админ') {
+//     console.log('Здравствуйте!');
+//   } else {
+//     console.log('Неверный пароль');
+//   }
+// } else {
+//   if (login === null || login === '') {
+//     console.log('Отменено');
+//   } else {
+//     console.log('Я вас не знаю');
+//   }
+// }
+
+// ======== !!!!! G A M E !!! =====
+// =========== вопросы на занятии =========
+// === slice пример применени в бегущей строке ==========
+// ===== у меня не получилось запустить !!! =============
+// const text =
+//   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laboriosam nostrum saepe odio fugiat rerum facilis consequuntur corporis, sit aut eius sapiente atque nisi ut cumque? Dolore cumque hic reiciendis.';
+
+// const title = document.querySelector('h3');
+
+// for (let i = 0; i < text.length; i += 1) {
+//   const str = text.slice(i);
+//   console.log(str);
+//   setTimeout(() => {
+//     title.textContent = str;
+//   }, i * 10);
+// }
+// =========== это код Гери из его ГитХаба, он тоже не запустился=====
+// const text =
+//   'Метод slice() возвращает новый массив, содержащий копию части исходного массива ';
+
+// const title = document.querySelector('h3');
+
+// for (let i = 0; i < text.length; i += 1) {
+//   const str = text.slice(i);
+
+//   setTimeout(() => {
+//     title.textContent = str;
+//   }, i * 100);
+// }
