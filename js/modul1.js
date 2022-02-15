@@ -426,8 +426,6 @@
 
 // console.log(`Общая сумма потраченого в магазине: ${totalSpent}`);
 // =========================
-<<<<<<< Updated upstream
-=======
 // Модуль 1. Занятие 2. Ветвления. Циклы
 
 // Example 1 - Ввод пользователя и ветвления
@@ -723,4 +721,3 @@
 // console.log(Number.isNaN('123')); // 123 - false
 // console.log(Number.isNaN(123)); // 123 - false
 // //  проверка
->>>>>>> Stashed changes
