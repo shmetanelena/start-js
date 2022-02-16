@@ -103,19 +103,21 @@
 //     массив чисел, и рассчитывает общую сумму его элементов.
 //     Общая сумма элементов должна сохраняться в переменной total,
 //     которая возвращается, как результат работы функции.
+//     Напиши функцию calculateTotalPrice(order),
 function calculateTotalPrice(order) {
   let total = 0;
-  // Change code below this line
-  for (const number of order) {
-    total += number;
+  //   // ====== ВАРИАНТ 1 КЛАССНЫЙ =====
+  //   for (const number of order) {
+  //     total += number;
+  //   }
+  //====== ВАРИАНТ 2 ОБЫЧНЫЙ
+  for (let i = 0; i < order.length; i += 1) {
+    total += order[i];
   }
-  //   for (let i = 0; i < order.length; i += 1) {
-  //     total += order[i];
-  //     //Change code above this line
+  //   // Change code above this line
   return total;
 }
 
 console.log(calculateTotalPrice([12, 85, 37, 4]));
 console.log(calculateTotalPrice([164, 48, 291]));
 console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
-// console.log(calculateTotalPrice());
