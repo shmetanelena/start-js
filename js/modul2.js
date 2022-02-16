@@ -121,14 +121,35 @@
 // console.log(calculateTotalPrice([12, 85, 37, 4]));
 // console.log(calculateTotalPrice([164, 48, 291]));
 // console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
-// ==========  посчитать сумму четных чисмел в массиве =========
-const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 11];
+// ==========  посчитать сумму четных чисмел в массиве(если нечтное то !==0) =========
+// const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 11];
+// let total = 0;
+// // for (let i = 0; i < numbers.length; i += 1) {
+// //   console.log(numbers[i]);
+// //   if (numbers[i] % 2 === 0) {
+// //     console.log('Четное!!!');
+// //     total += numbers[i];
+// //   }
+// // }
+// for (const number of numbers) {
+//   console.log(number);
+//   if (number % 2 === 0) {
+//     console.log(`${number} - Четное!!!`);
+//     total += number;
+//   }
+// }
+// console.log('total: ', total);
+//       ============= таже задача с исп continue =====
+const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 14];
 let total = 0;
-for (let i = 0; i < numbers.length; i += 1) {
-  console.log(numbers[i]);
-  if (numbers[i] % 2 === 0) {
-    console.log('Четное!!!');
-    total += numbers[i];
+for (const number of numbers) {
+  if (number % 2 !== 0) {
+    console.log('Эту итерацию нужно пропустить', number);
+    continue;
   }
+  console.log(`${number} - Четное!!!`);
+  total += number;
 }
+
 console.log('total: ', total);
+// ========================
