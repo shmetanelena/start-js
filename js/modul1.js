@@ -1,190 +1,3 @@
-// console.log('Modul 1.1');
-// console.log('start');
-
-// for (let i = 0; i < 5; i += 1) {
-//   console.log(i);
-// }
-
-// console.log('end');
-
-//========TASKS============
-// ========#1===========
-// Выведи на экран общее количество яблок и винограда.
-// Разницу яблок и винограда.
-// const apples = 47;
-// const grapes = 135;
-// const total = apples + grapes;
-// console.log(total);
-// const diff = apples - grapes;
-// console.log(diff);
-
-// ======#2==========
-// Example 2 - Комбинированные операторы
-// Замени выражение переопределения комбинированным
-// оператором +=.
-
-// let students = 100;
-// students += 50; // students = students + 50:
-// console.log(students);
-
-// ======#3==========
-// Example 3 - Приоритет операторов
-// Разбери приоритет операторов в инструкции
-// присвоения значения переменной result.
-
-// const result = 50 + 40 - 2 * 5;
-// console.log(result);
-
-// ======#4==========
-// Example 4 - Класс Math
-// Напиши скрипт, который выводит в консоль округленные
-// вверх / вниз и т.д.значения переменной value.
-// Используй методы Math.floor(), Math.ceil() и Math.round().
-// Проверь что будет в консоли при значениях 27.3 и 27.9.
-
-// const value = 27.9;
-// console.log(Math.floor(value)); //27
-// console.log(Math.ceil(value)); //28
-// console.log(Math.round(value)); //28
-
-// ======#5==========
-// Example 5 - Шаблонные строки
-// Составь фразу с помощью шаблонных
-// строк A has B bots in stock, где A, B -
-// переменные вставленные в строку.
-
-// const companyName = 'Cyberdyne Systems';
-// const repairBots = 150;
-// const defenceBots = 50;
-// const message = `Cyberdyne Systems has ${
-//   repairBots + defenceBots
-// } bots in stock`;
-// console.log(message); // "Cyberdyne Systems has 200 bots in stock"
-
-// ======#6==========
-// Example 6 - Методы строк и чейнинг
-// Напиши скрипт который рассчитывает индекс массы тела
-// человека.Для этого необходимо разделить вес в киллограммах
-// на квадрат высоты человека в метрах.
-// Вес и высота хранятся в переменных weight и height,
-// но не как числа, а в виде строк(специально для задачи).
-// Нецелые числа могут быть заданы в виде 24.7 или 24, 7, т
-// о есть в качестве разделителя дробной части может быть
-// запятая.
-
-// Индекс массиы тела необходимо округлить до
-// одной цифры после запятой;
-
-// let weight = '88,3';
-// let height = '1.75';
-
-// const weightNum = Number(
-//   weight.replace(',', '.')
-// );
-// const heightNum = Number(height);
-
-// console.log(weightNum);
-// console.log(heightNum);
-
-// const bmi = (
-//   weightNum / Math.pow(heightNum, 2)
-// ).toFixed(1);
-// console.log(bmi); // 28.8
-
-// ======#7==========
-// Example 7 - Операторы сравнения и приведение типов
-// Каким будет результат выражений?
-
-// console.log(5 > 4);
-
-// console.log(10 >= '7');
-
-// console.log('2' > '12');
-
-// console.log('2' < '12');
-
-// console.log('4' == 4);
-
-// console.log('6' === 6);
-
-// console.log('false' === false);
-
-// console.log(1 == true);
-
-// console.log(1 === true);
-
-// console.log('0' == false);
-
-// console.log('0' === false);
-
-// console.log('Papaya' < 'papaya');
-
-// console.log('Papaya' === 'papaya');
-
-// console.log(undefined == null);
-
-// console.log(undefined === null);
-
-// ======#8==========
-// Example 8 - Логические операторы
-// Каким будет результат выражений?
-
-// console.log(true && 3);
-
-// console.log(false && 3);
-
-// console.log(true && 4 && 'kiwi');
-
-// console.log(true && 0 && 'kiwi');
-
-// console.log(true || 3);
-
-// console.log(true || 3 || 4);
-
-// console.log(true || false || 7);
-
-// console.log(null || 2 || undefined);
-
-// console.log((1 && null && 2) > 0);
-
-// console.log(null || (2 && 3) || 4);
-
-// ======#9==========
-// Example 9 - Значение по умолчанию и оператор нулевого слияния
-// Отрефактори код так, чтобы в переменную
-// value присваивалось значение переменной incomingValue,
-// если оно не равно undefined или null.
-// В противном случае должно присваиваться
-// значение defaultValue.Проверь работу скрипта
-// для слепдующих значений переменной
-// incomingValue: null, undefined, 0, false.
-// Используй оператор ?? (nullish coalescing operator).
-
-// const incomingValue = 5;
-// const defaultValue = 10;
-// const value = incomingValue || defaultValue;
-// console.log(value);
-
-// ======#10==========
-// Example 10 - Опертор % и методы строк
-// Напиши скрипт который переведёт значение totalMinutes
-// (количество минут) в строку в формате часов
-// и минут HH: MM.
-
-// 70 покажет 01:10
-// 450 покажет 07:30
-// 1441 покажет 24:01
-// const totalMinutes = 70;
-
-// const hours = Math.floor(totalMinutes / 60);
-// const minutes = totalMinutes % 60;
-// console.log(hours);
-// console.log(minutes);
-
-// const doubleDigitHours = String(hours).padStart(2, 0);
-// const doubleDigitMinutes = String(minutes).padStart(2, 0);
-// console.log(`${doubleDigitHours}:${doubleDigitMinutes}`);
-
 // ==============Автопроверка 1 модуль задача 24==========
 // function getDiscount(totalSpent) {
 //   const BASE_DISCOUNT = 0;
@@ -447,9 +260,9 @@
  */
 
 //  1 вары
-const min = 0;
-const max = 5;
-let total = 0;
+// const min = 0;
+// const max = 5;
+// let total = 0;
 // ========= вариант 1 ===========
 // for (let i = min; i <= max; i += 1) {
 //   console.log(i);
@@ -497,22 +310,414 @@ let total = 0;
  * - В конце вывести сообщение «Операция завершена»
  */
 
+// let balance = 5000;
+// const payment = 20000;
+// // ============== мое решение ==========
+// console.log(
+//   `Общая стоимость заказа ${payment} кредитов.
+// Проверяем кол-во доступных средств на счету`
+// );
+// if (payment <= balance) {
+//   console.log(
+//     'Все хорошо, снимаем деньги... Спасибо за покупку!'
+//   );
+//   balance -= payment;
+//   // console.log(
+//   //   'Все хорошо, снимаем деньги... Спасибо за покупку!'
+//   // );
+//   console.log(
+//     `На счету осталось ${balance} кредитов`
+//   );
+// } else {
+//   console.log(
+//     'На счету недостаточно средств для проведения операции!'
+//   );
+// }
+// console.log('Операция завершена');
+// // ============================
+
+// ======= решение Репеты ===
 //  1 вары
-let balance = 10000;
-const payment = 2000;
+// let balance = 10000;
+// const payment = 2000;
 
-console.log(
-  `Общая стоимость заказа ${payment} кредитов. Проверяем кол-во доступных средств на счету`
-);
+// console.log(
+//   `Общая стоимость заказа ${payment} кредитов. Проверяем кол-во доступных средств на счету`
+// );
 
-if (payment <= balance) {
-  balance -= payment;
-  // balance = balance - payment
+// if (payment <= balance) {
+//   balance -= payment;
+//   // balance = balance - payment
 
-  console.log('Все хорошо, снимаем деньги... Спасибо за покупку!');
-  console.log(`На счету осталось ${balance} кредитов`);
-} else {
-  console.log('На счету недостаточно средств для проведения операции!');
-}
+//   console.log('Все хорошо, снимаем деньги... Спасибо за покупку!');
+//   console.log(`На счету осталось ${balance} кредитов`);
+// } else {
+//   console.log('На счету недостаточно средств для проведения операции!');
+// }
 
-console.log('Операция завершена');
+// console.log('Операция завершена');
+// ===========
+
+// ===========
+/*
+ * Напиши скрипт подсчёта суммы покупки со скидкой в зависимости
+ * от потраченной суммы за всё время (партнёрская программа).
+ *
+ * - Общая сумма потраченного хранится в переменной totalSpent
+ * - Сумма текущего платежа хранится в переменной payment
+ * - Скидка хранится в переменной discount
+ *
+ * - Если потрачено от [100 до 1000) - бронзовый партнёр, скидка 2%
+ * - Если потрачено от [1000 до 5000) - серебрянный партрёр, скидка 5%
+ * - Если потрачено больше [5000 - золотой партрёр, скидка 10%
+ * - Если потрачено меньше 100) - не партнёр, скидка 0%
+ *
+ * - В результате вывести сообщение
+ * «Оформляем заказ на сумму [сумма] со скидкой [скидка]%»
+ */
+
+// let totalSpent = 2000;
+// let payment = 500;
+// let discount = 0;
+// // ========= мой вариант ==============
+// if (totalSpent >= 100 && totalSpent < 1000) {
+//   console.log('Бронзовый партнер, скидка 2%');
+//   discount = 0.02;
+// } else if (totalSpent >= 1000 && totalSpent < 5000) {
+//   console.log('Серебрянный партнер, скидка 5%');
+//   discount = 0.05;
+// } else if (totalSpent > 5000) {
+//   console.log('Золотой партнер, скидка 10%');
+//   discount = 0.1;
+// } else {
+//   console.log('Не партнёр, скидка 0%');
+// }
+// payment -= payment * discount;
+// // // payment = payment - payment * discount;
+// console.log(
+//   `Оформляем заказ на сумму ${payment} со скидкой ${discount * 100}%`
+// );
+// totalSpent += payment;
+
+// console.log(`Общая сумма потраченого в магазине: ${totalSpent}`);
+// ============================================
+// ============== вариант РЕПЕТЫ ==============
+// if (totalSpent >= 100 && totalSpent < 1000) {
+//   console.log('Бронзовый партнер, скидка 2%');
+//   discount = 0.02;
+// } else if (totalSpent >= 1000 && totalSpent < 5000) {
+//   console.log('Серебрянный партнер, скидка 5%');
+//   discount = 0.05;
+// } else if (totalSpent >= 5000) {
+//   console.log('Золотой партнер, скидка 10%');
+//   discount = 0.1;
+// } else {
+//   console.log('Не партнёр, скидка 0%');
+// }
+
+// payment -= payment * discount;
+// // payment = payment - payment * discount;
+
+// console.log(
+//   `Оформляем заказ на сумму ${payment} со скидкой ${discount * 100}%`,
+// );
+
+// totalSpent += payment;
+
+// console.log(`Общая сумма потраченого в магазине: ${totalSpent}`);
+// =========================
+// Модуль 1. Занятие 2. Ветвления. Циклы
+
+// Example 1 - Ввод пользователя и ветвления
+
+// Используя конструкцию if..else и prompt, напиши код,
+//   который будет спрашивать: "Какое официальное название JavaScript?".
+//   Если пользователь вводит ECMAScript, то показывай alert со
+//   строкой "Верно!", в противном случае - "Не знаете? ECMAScript!"
+// ===== решение с помощью if ========
+// const userInput = prompt('Какое официальное название JavaScript?');
+// let answer;
+// if (userInput !== null && userInput.toLocaleLowerCase() === 'ecmascript') {
+//   answer = 'Верно';
+// } else {
+//   answer = 'Не знаете? ECMAScript!';
+// }
+
+// console.log(answer);
+
+// ===== решение с помощью тернарника ========
+// const userInput = prompt('Какое официальное название JavaScript?');
+// let answer =
+//   userInput?.toLocaleLowerCase() === 'ecmascript'
+//     ? 'Верно'
+//     : 'Не знаете? ECMAScript!';
+
+// console.log(answer);
+
+// Example 2 - Отображение времени (if...else)
+
+// Напиши скрипт для отображения часов и минут
+// в консоли браузера в виде строки формата "14 ч. 26 мин.".
+// Если значение переменной minutes равно 0,
+// то выводи строку "14 ч.", без минут.
+// ==== с помощью тернарника =====
+
+// const hours = 14;
+// const minutes = 0;
+// let timestring = minutes > 0 ? `${hours} ч. ${minutes} мин.` : `${hours} ч.`;
+// console.log(timestring);
+
+// ==== с помощью if else =====
+// const hours = 14;
+// const minutes = 0;
+// let timestring;
+// if (minutes > 0) {
+//   timestring = `${hours} ч. ${minutes} мин.`;
+// } else {
+//   timestring = `${hours} ч.`;
+// }
+// console.log(timestring);
+
+// Example 3 - Ветвеления
+
+// Напиши скрипт, который выводит в консоль строку
+// "Это положительное число", если в prompt пользователь ввел число
+// больше нуля.
+// Если был введен ноль, выводи в консоль строку "Это ноль".
+// Если передали отрицательное число, в консоли должна
+// быть строка "Это отрицательное число".
+
+// const userInput = prompt('Введите число');
+// const userInputNumer = Number(userInput);
+
+// if (Number.isNaN(userInputNumer) || !userInput) {
+//   // !userInput аналогично записи userInput === 0
+//   console.log('Это не число');
+// } else if (userInput > 0) {
+//   console.log('Это положительное число');
+// } else if (userInput < 0) {
+//   console.log('Это отрицательное число');
+// } else {
+//   console.log('Это нуль');
+// }
+
+// Example 4 - Вложенные ветвления
+
+// Напиши скрипт, который сравнивает числа в переменных a и b.
+// Если оба значения больше 100, то выведи в консоль максимальное из них.
+// В противном случае в консоли должна быть сумма значения b и числа 512.
+
+// const a = 1200;
+// const b = 180;
+
+// if (a > 100 && b > 100) {
+//   //   if (a > b) {
+//   //     console.log(`Максимальное значение: ${a}`);
+//   //   } else {
+//   //     console.log(`Максимальное значение: ${b}`);
+//   //   }
+//   console.log(`Максимальное значение: ${a > b ? a : b}`);
+// } else {
+//   console.log(b + 512);
+// }
+
+// Example 5 - Форматирование ссылки (endsWith)
+
+// Напиши скрипт который проверяет заканчивается ли значение
+// переменной link символом /.
+// Если нет, добавь в конец значения link этот символ.
+// Используй конструкцию if...else.
+
+// let link = 'https://my-site.com/about/';
+// // Пиши код ниже этой строки
+// if (!link.endsWith('/')) {
+// if (link[link.length - 1] !== '/') {  // второй вариант решения
+//   link += '/';
+// }
+// // // Пиши код выше этой строки
+// console.log(link);
+
+// Example 6 - Форматирование ссылки (includes и логическое «И»)
+
+// Напиши скрипт который проверяет заканчивается ли значение переменной link символом /. Если нет, добавь в конец значения link этот символ, но только в том случае, если в link есть подстрока "my-site". Используй конструкцию if...else.
+
+// let link = 'https://somesite.com/about';
+// // Пиши код ниже этой строки
+
+// // Пиши код выше этой строки
+// console.log(link);
+
+// Example 7 - Форматирование ссылки (тернарный оператор)
+
+// Выполни рефакторинг кода задачи номер 4 используя
+// тернарный оператор.
+
+// let link = 'https://my-site.com/about';
+// // if (link.includes('my-site') && !link.endsWith('/')) {
+// //   link += '/';
+// // }
+// link += link.includes('my-site') && !link.endsWith('/') ? '/' : '';
+// console.log(link);
+
+// Example 8 - if...else и логические операторы
+
+// Напиши скрипт который будет выводить в консоль браузера
+// строку в зависимости от значения переменной hours.
+
+// Если значение переменной hours:
+
+// меньше 17, выводи строку "Pending"
+// больше либо равно 17 и меньше либо равно 24,
+// выводи строку "Expires"
+// больше 24 , выводи строку "Overdue"
+
+// const hours = 25;
+// if (hours <= 17) {
+//   console.log('Pending');
+// } else if (hours >= 17 && hours <= 24) {
+//   console.log('Expires');
+// } else {
+//   console.log('Overdue');
+// }
+// Example 9 - Дедлайн сдачи проекта (if...else)
+
+// Напиши скрипт для отображения времени дедлайна сдачи проекта.
+// Используй конструкцию if...else.
+
+// Eсли до дедлайна 0 дней - выведи строку "Сегодня"
+// Eсли до дедлайна 1 день - выведи строку "Завтра"
+// Eсли до дедлайна 2 дня - выведи строку "Послезавтра"
+// Eсли до дедлайна 3+ дней - выведи строку "Дата в будущем"
+// const daysUntilDeadline = 0;
+// // Пиши код ниже этой строки
+
+// if (daysUntilDeadline === 0) {
+//   console.log('Ночью спать не придется');
+// } else if (daysUntilDeadline === 1) {
+//   console.log('Завтра');
+// } else if (daysUntilDeadline === 2) {
+//   console.log('Послезавтра');
+// } else {
+//   console.log('Дата в будущем');
+// }
+
+// Example 10 - Дедлайн сдачи проекта (switch)
+
+// Выполни рефакторинг кода задачи номер 5 используя switch.
+
+// const daysUntilDeadline = 5;
+
+// switch (daysUntilDeadline) {
+//   case 0:
+//     console.log('Сегодня спать не придется');
+//     break;
+//   case 1:
+//     console.log('Завтра');
+//     break;
+//   case 2:
+//     console.log('Послезавтра');
+//     break;
+//   default:
+//     console.log('Дата в будущем');
+//     break;
+// }
+
+// Example 11 - Цикл for
+
+// Напиши цикл for который выводит в консоль браузера
+// числа по возрастанию от min до max,
+// но только если число кратное 5.
+
+// const max = 100;
+// const min = 20;
+// for (let i = min; i <= max; i += 1) {
+//   if (i % 5 === 0) {
+//     console.log(i);
+//   }
+// }
+// Example 12 - Ввод пользователя и ветвления
+
+// Напиши скрипт, который будет спрашивать логин с помощью prompt
+// и логировать результат в консоль браузера.
+
+// Если посетитель вводит "Админ", то prompt запрашивает пароль
+// Если ничего не введено или нажата клавиша Esc -
+// вывести строку "Отменено"
+// В противном случае вывести строку "Я вас не знаю"
+// Пароль проверять так:
+
+// Если введён пароль "Я админ", то вывести строку "Здравствуйте!"
+// Иначе выводить строку "Неверный пароль"
+// const login = prompt('enter login');
+
+// if (login === 'Админ') {
+//   const password = prompt('enter password');
+//   if (password === 'Я админ') {
+//     console.log('Здравствуйте!');
+//   } else {
+//     console.log('Неверный пароль');
+//   }
+// } else {
+//   if (login === null |`| login === '') {
+//     console.log('Отменено');
+//   } else {
+//     console.log('Я вас не знаю');
+//   }
+// }
+
+// ======== !!!!! G A M E !!! =====
+
+// =========== вопросы на занятии =========
+// === slice пример применени в бегущей строке ==========
+// ===== у меня не получилось запустить !!! =============
+// const text =
+//   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laboriosam nostrum saepe odio fugiat rerum facilis consequuntur corporis, sit aut eius sapiente atque nisi ut cumque? Dolore cumque hic reiciendis.';
+
+// const title = document.querySelector('h3');
+
+// for (let i = 0; i < text.length; i += 1) {
+//   const str = text.slice(i);
+//   console.log(str);
+//   setTimeout(() => {
+//     title.textContent = str;
+//   }, i * 10);
+// }
+// =========== это код Гери из его ГитХаба, он тоже не запустился=====
+// const text =
+//   'Метод slice() возвращает новый массив, содержащий копию части исходного массива ';
+
+// const title = document.querySelector('h3');
+
+// for (let i = 0; i < text.length; i += 1) {
+//   const str = text.slice(i);
+
+//   setTimeout(() => {
+//     title.textContent = str;
+//   }, i * 100);
+// }
+// ==============
+// ====== isNaN vs Number.isNaN ======
+// === isNaN ===
+// console.log(isNaN('a')); // true
+// console.log(isNaN('b')); // true
+// console.log(isNaN('bsdkfjgh')); // true
+// console.log(isNaN(undefined)); // true
+// console.log(isNaN(NaN)); // true
+
+// console.log(isNaN(false)); // 0 - false
+// console.log(isNaN(true)); // 1 - false
+// console.log(isNaN('123')); // 123 - false
+// console.log(isNaN(123)); // 123 - false
+
+// // === Number.isNaN ===
+// console.log(Number.isNaN(NaN));
+
+// console.log(Number.isNaN('a')); // false
+// console.log(Number.isNaN('b')); // false
+// console.log(Number.isNaN('bsdkfjgh')); // false
+// console.log(Number.isNaN(undefined)); // false
+// console.log(Number.isNaN(false)); // 0 - false
+// console.log(Number.isNaN(true)); // 1 - false
+// console.log(Number.isNaN('123')); // 123 - false
+// console.log(Number.isNaN(123)); // 123 - false
+// //  проверка
