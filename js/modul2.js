@@ -104,20 +104,31 @@
 //     Общая сумма элементов должна сохраняться в переменной total,
 //     которая возвращается, как результат работы функции.
 //     Напиши функцию calculateTotalPrice(order),
-function calculateTotalPrice(order) {
-  let total = 0;
-  //   // ====== ВАРИАНТ 1 КЛАССНЫЙ =====
-  //   for (const number of order) {
-  //     total += number;
-  //   }
-  //====== ВАРИАНТ 2 ОБЫЧНЫЙ
-  for (let i = 0; i < order.length; i += 1) {
-    total += order[i];
-  }
-  //   // Change code above this line
-  return total;
-}
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   //   // ====== ВАРИАНТ 1 КЛАССНЫЙ =====
+//   //   for (const number of order) {
+//   //     total += number;
+//   //   }
+//   //====== ВАРИАНТ 2 ОБЫЧНЫЙ
+//   for (let i = 0; i < order.length; i += 1) {
+//     total += order[i];
+//   }
+//   //   // Change code above this line
+//   return total;
+// }
 
-console.log(calculateTotalPrice([12, 85, 37, 4]));
-console.log(calculateTotalPrice([164, 48, 291]));
-console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+// console.log(calculateTotalPrice([164, 48, 291]));
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+// ==========  посчитать сумму четных чисмел в массиве =========
+const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 11];
+let total = 0;
+for (let i = 0; i < numbers.length; i += 1) {
+  console.log(numbers[i]);
+  if (numbers[i] % 2 === 0) {
+    console.log('Четное!!!');
+    total += numbers[i];
+  }
+}
+console.log('total: ', total);
