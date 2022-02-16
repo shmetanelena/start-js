@@ -140,16 +140,79 @@
 // }
 // console.log('total: ', total);
 //       ============= таже задача с исп continue =====
-const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 14];
-let total = 0;
+// const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 14];
+// let total = 0;
+// for (const number of numbers) {
+//   if (number % 2 !== 0) {
+//     console.log('Эту итерацию нужно пропустить', number);
+//     continue;
+//   }
+//   console.log(`${number} - Четное!!!`);
+//   total += number;
+// }
+
+// console.log('total: ', total);
+// ======================== скрипт поиска логина ========
+/*
+ * Напиши скрипт поиска логина
+ * - Если логина нет, вывести сообщение 'Пользователь [логин] не найден.'
+ * - Если нашли логин, вывести сообщение 'Пользователь [логин] найден.'
+ *
+ * - Сначала через for
+ * - Потом через for...of
+ * - Логика break
+ * - Метод includes() с тернарным оператором
+ */
+
+const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+const loginToFind = 'poly1scute';
+// let message = `Пользователь ${loginToFind} не найден.`;
+//===========  первый вариант решения ===========
+// for (let i = 0; i < logins.length; i += 1) {
+//   const login = logins[i];
+//   console.log('login: ', login);
+//   console.log(`${login} === ${loginToFind} ; `, login === loginToFind);
+
+//   if (login === loginToFind) {
+//     console.log('Ура равны!');
+//     message = `Пользователь ${loginToFind} найден.`;
+//     break;
+//   }
+// }
+// console.log(message);
+// =========== промтой вариант через for of ========
+// for (const login of logins) {
+//   console.log('Login: ', login);
+//   console.log(`${login} === ${loginToFind}: `, login === loginToFind);
+
+//   if (login === loginToFind) {
+//     console.log('Ура, равны!!!');
+//     message = `Пользователь ${loginToFind} найден.`;
+//     break;
+//   }
+// }
+
+// console.log(message);
+
+// ============ решение через include ===========
+// const message = logins.includes(loginToFind)
+//   ? `Пользователь ${loginToFind} найден.`
+//   : `Пользователь ${loginToFind} не найден.`;
+
+// console.log(message);
+// ///==========
+/*
+ * Напиши скрипт поиска самого маленького числа в массиве,
+ * при условии что числа уникальные (не повторяются).
+ */
+
+const numbers = [51, 18, 13, 24, 7, 85, 19];
+let smallestNumber = numbers[0];
+
 for (const number of numbers) {
-  if (number % 2 !== 0) {
-    console.log('Эту итерацию нужно пропустить', number);
-    continue;
+  if (number < smallestNumber) {
+    smallestNumber = number;
   }
-  console.log(`${number} - Четное!!!`);
-  total += number;
 }
 
-console.log('total: ', total);
-// ========================
+console.log('smallestNumber: ', smallestNumber);
