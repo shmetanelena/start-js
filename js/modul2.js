@@ -306,6 +306,99 @@ const loginToFind = 'poly1scute';
 // }
 // console.log('invertedString: ', invertedString);
 
+//=============================
+/*
+ * Делаем slug в URL из названия статьи (например на dev.to)
+ * Заголовок статьи состоит только из букв и пробелов
+ *
+ * - Нормализируем строку
+ * - Разбиваем по словам
+ * - Сшиваем в строку с разделителями
+ */
+
+// Должно получиться top-10-benefits-of-react-framework
+// const title = 'Top 10 benefits of React framework';
+// // console.log(title);
+// // const normalizedTitle = title.toLowerCase();
+// // console.log(normalizedTitle);
+// // const words = normalizedTitle.split(' ');
+// // console.log(words);
+// // const slug = words.join('-');
+// // console.log(slug);
+
+// const slug1 = title.toLowerCase().split(' ').join('-');
+// console.log(slug1);
+
+// ==================================
+/*
+ * Напиши скрипт который считает сумму элементов двух массивов.
+ */
+
+// const array1 = [5, 10, 15, 20];
+// const array2 = [10, 20, 30];
+// let total = 0;
+// const numbers = array1.concat(array2);
+
+// for (const number of numbers) {
+//   total += number;
+// }
+
+// console.log(numbers);
+// console.log(total);
+//======================
+
+// =======
+/*
+ * Работем с коллекцией карточек в trello
+ * - Метод splice()
+ * - Удалить
+ * - Добавить
+ * - Обновить
+ */
+
+const cards = [
+  'Карточка-1',
+  'Карточка-2',
+  'Карточка-3',
+  'Карточка-4',
+  'Карточка-5',
+];
+
+console.table(cards);
+
+/*
+ * Удаление (по индексу), метод indexOf()
+ */
+
+// const cardToRemove = 'Карточка-3';
+// const index = cards.indexOf(cardToRemove);
+// console.log(index);
+
+// cards.splice(index, 1);
+
+// console.table(cards);
+
+/*
+ * Добавление (по индексу)
+ */
+// const cardToInsert = 'Карточка-6';
+// const index = 3;
+
+// cards.splice(index, 0, cardToInsert);
+// console.table(cards);
+
+/*
+ * Обновление (по индексу)
+ */
+const cardToUpdate = 'Карточка-4';
+const index = cards.indexOf(cardToUpdate);
+
+console.log(index);
+
+cards.splice(index, 1, 'Обновленная карточка-4');
+
+console.table(cards);
+
 // =========== task 26 modul 3 =====
 // Выполни рефакторинг кода функции calculateTotalPrice(order)
 // заменив цикл for на for...of.
