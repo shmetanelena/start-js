@@ -240,13 +240,55 @@ const loginToFind = 'poly1scute';
  * при условии что числа уникальные (не повторяются).
  */
 
-const numbers = [51, 18, 13, 24, 7, 85, 19];
-let smallestNumber = numbers[0];
+// const numbers = [51, 18, 13, 24, 7, 85, 19];
+// let smallestNumber = numbers[0];
 
-for (const number of numbers) {
-  console.log(number);
-  if (number < smallestNumber) {
-    smallestNumber = number;
-  }
-}
-console.log('smallestNumber: ', smallestNumber);
+// for (const number of numbers) {
+//   console.log(number);
+//   if (number < smallestNumber) {
+//     smallestNumber = number;
+//   }
+// }
+// console.log('smallestNumber: ', smallestNumber);
+//================
+/*
+ * Напиши скрипт, который объединяет все элементы массива в одно строковое значение.
+ * Элементов может быть произвольное кол-во.
+ * Пусть элементы массива  в строке будут разделены запятой.
+ * - Сначала через for
+ * - Потом через join()
+ */
+
+const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+// let string = '';
+
+// for (const friend of friends) {
+//   string += friend + ',';
+// }
+
+// string = string.slice(0, string.length - 1);
+
+// const string = friends.join(',');
+// console.log(friends);
+// console.log(string);
+
+// Должно получиться 'Mango,Poly,Kiwi,Ajax'
+
+// =========== task 26 modul 3 =====
+// Выполни рефакторинг кода функции calculateTotalPrice(order)
+// заменив цикл for на for...of.
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   // Change code below this line
+//   // for (let i = 0; i < order.length; i += 1) {
+//   //   total += order[i];
+//   // }
+//   for (const value of order) {
+//     total += value;
+//   }
+//   // Change code above this line
+//   return total;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+// console.log(calculateTotalPrice([164, 48, 291]));
+// ===================
