@@ -278,6 +278,34 @@ const loginToFind = 'poly1scute';
 
 // // Должно получиться 'Mango,Poly,Kiwi,Ajax'
 
+// ==================
+/*
+ * Напиши скрипт который заменяет регистр каждого символа в строке на противоположный.
+ * Например, если строка «JavaScript», то на выходе должена быть строка «jAVAsCRIPT».
+ */
+
+// const string = '«JavaScript»';
+// const letters = string.split('');
+// let invertedString = '';
+
+// console.log(letters);
+// for (const letter of letters) {
+//   console.log(letter);
+//   //   if (letter === letter.toLowerCase()) {
+//   //     console.log('Эта буква в нижнем регитстре!!!', letter);
+
+//   //     invertedString += letter.toUpperCase();
+//   //   } else {
+//   //     console.log('Эта буква в верхнем регистре!!! - ', letter);
+//   //     invertedString += letter.toLowerCase();
+//   //   }
+//   invertedString +=
+//     letter === letter.toLowerCase()
+//       ? letter.toUpperCase()
+//       : letter.toLowerCase();
+// }
+// console.log('invertedString: ', invertedString);
+
 // =========== task 26 modul 3 =====
 // Выполни рефакторинг кода функции calculateTotalPrice(order)
 // заменив цикл for на for...of.
