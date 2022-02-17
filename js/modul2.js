@@ -235,3 +235,18 @@ const loginToFind = 'poly1scute';
 // console.log(filterArray([1, 2, 3, 4, 5], 5));
 // console.log(filterArray([12, 24, 8, 41, 76], 38));
 // console.log(filterArray([12, 24, 8, 41, 76], 20));
+/*=========
+ * Напиши скрипт поиска самого маленького числа в массиве,
+ * при условии что числа уникальные (не повторяются).
+ */
+
+const numbers = [51, 18, 13, 24, 7, 85, 19];
+let smallestNumber = numbers[0];
+
+for (const number of numbers) {
+  console.log(number);
+  if (number < smallestNumber) {
+    smallestNumber = number;
+  }
+}
+console.log('smallestNumber: ', smallestNumber);
