@@ -253,12 +253,70 @@ const loginToFind = 'poly1scute';
  * Напиши функцию logItems(items) для перебора и логирования массива
  */
 
-const logItems = function (items) {
-  for (const item of items) {
-    console.log(item);
-  }
+// const logItems = function (items) {
+//   for (const item of items) {
+//     console.log(item);
+//   }
+// };
+
+// logItems(['Mango', 'Kiwi', 'Poly', 'Ajax']);
+// logItems([1, 2, 3, 4, 5]);
+// logItems(['клавиатура', 'наушники', 'часы']);
+//==========================
+
+//. Поменять регистр у букв
+
+// const changeCase = function (string) {
+//   const letters = string.split('');
+//   let invertedString = ' ';
+
+//   for (const letter of letters) {
+//     const isInLowerCase = letter === letter.toLowerCase();
+
+//     invertedString += isInLowerCase
+//       ? letter.toUpperCase()
+//       : letter.toLowerCase();
+//   }
+
+//   return invertedString;
+// };
+// console.log(changeCase('qweRTY'));
+// console.log(changeCase('mAnGo'));
+// console.log(changeCase('AjAx'));
+
+// ==============  псевдомассив =======
+//ARGUMENTS псевдом
+// === переделать псевдомассив в массив с помощью Array.from;
+// const fn = function () {
+//   console.log(arguments);
+// // === переделать псевдомассив в массив с помощью Array.from;
+//   const args = Array.from(arguments);
+
+//   console.log(args);
+
+//   //   for (const arg of arguments) {
+//   //     console.log(arg);
+//   //   }
+// };
+
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7);
+//========== ... переделывает в массив - современный способ
+// const fn = function (...args) {
+//   console.log(args);
+// };
+
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7);
+
+//============ (a, b, c, ...args) пропустит первые
+// три элемента массива, остальные добавитт в массив
+const fn = function (a, b, c, ...args) {
+  console.log(args);
 };
 
-logItems(['Mango', 'Kiwi', 'Poly', 'Ajax']);
-logItems([1, 2, 3, 4, 5]);
-logItems(['клавиатура', 'наушники', 'часы']);
+fn('hello', 1, 2, 3);
+fn('aloha', 1, 2, 3, 4, 5);
+fn('hi', 1, 2, 3, 4, 5, 6, 7);
