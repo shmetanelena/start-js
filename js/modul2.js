@@ -200,12 +200,128 @@ const loginToFind = 'poly1scute';
 //   : `Пользователь ${loginToFind} не найден.`;
 
 // console.log(message);
-// ///==========
+
+// =========== task 26 modul 3 =====
+// Выполни рефакторинг кода функции calculateTotalPrice(order)
+// заменив цикл for на for...of.
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   // Change code below this line
+//   // for (let i = 0; i < order.length; i += 1) {
+//   //   total += order[i];
+//   // }
+//   for (const value of order) {
+//     total += value;
+//   }
+//   // Change code above this line
+//   return total;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+// console.log(calculateTotalPrice([164, 48, 291]));
+// ===================
+// ========= Ф У Н К Ц И И ==============
 /*
- * Напиши скрипт поиска самого маленького числа в массиве,
- * при условии что числа уникальные (не повторяются).
+ * Напиши функцию calculateTotalPrice(items)
+ * которая принимает массив цен (чисел) и возвращает их сумму
+ */
+// //==== было так : ==========
+// // const cart = [54, 28, 105, 70, 92, 17, 120, 12, 25, 90];
+// // let total = 0;
+
+// // for (const value of cart) {
+// //   total += value;
+// // }
+
+// // console.log('Total: ', total);
+// //======== стало так с функцией ==========
+// const calculateTotalPrice = function (items) {
+//   console.log('items внутри функции: ', items);
+//   let total = 0;
+//   for (const item of items) {
+//     total += item;
+//   }
+//   return total;
+// };
+
+// const r1 = calculateTotalPrice([1, 2, 3]);
+
+// console.log(`Общая сумма покупок ${r1}`); // 6
+// console.log(calculateTotalPrice([5, 10, 15, 20])); // 50
+// console.log(calculateTotalPrice([100, 200, 300])); // 600
+// // ====================
+/*
+ * Напиши функцию logItems(items) для перебора и логирования массива
  */
 
+
+// const logItems = function (items) {
+//   for (const item of items) {
+//     console.log(item);
+//   }
+// };
+
+// logItems(['Mango', 'Kiwi', 'Poly', 'Ajax']);
+// logItems([1, 2, 3, 4, 5]);
+// logItems(['клавиатура', 'наушники', 'часы']);
+//==========================
+
+//. Поменять регистр у букв
+
+// const changeCase = function (string) {
+//   const letters = string.split('');
+//   let invertedString = ' ';
+
+//   for (const letter of letters) {
+//     const isInLowerCase = letter === letter.toLowerCase();
+
+//     invertedString += isInLowerCase
+//       ? letter.toUpperCase()
+//       : letter.toLowerCase();
+//   }
+
+//   return invertedString;
+// };
+// console.log(changeCase('qweRTY'));
+// console.log(changeCase('mAnGo'));
+// console.log(changeCase('AjAx'));
+
+// ==============  псевдомассив =======
+//ARGUMENTS псевдом
+// === переделать псевдомассив в массив с помощью Array.from;
+// const fn = function () {
+//   console.log(arguments);
+// // === переделать псевдомассив в массив с помощью Array.from;
+//   const args = Array.from(arguments);
+
+//   console.log(args);
+
+//   //   for (const arg of arguments) {
+//   //     console.log(arg);
+//   //   }
+// };
+
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7);
+//========== ... переделывает в массив - современный способ
+// const fn = function (...args) {
+//   console.log(args);
+// };
+
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7);
+
+//============ (a, b, c, ...args) пропустит первые
+// три элемента массива, остальные добавитт в массив
+const fn = function (a, b, c, ...args) {
+  console.log(args);
+};
+
+fn('hello', 1, 2, 3);
+fn('aloha', 1, 2, 3, 4, 5);
+fn('hi', 1, 2, 3, 4, 5, 6, 7);
+=======
 // const numbers = [51, 18, 13, 24, 7, 85, 19];
 // let smallestNumber = numbers[0];
 
@@ -399,7 +515,7 @@ cards.splice(index, 1, 'Обновленная карточка-4');
 
 console.table(cards);
 
-// =========== task 26 modul 3 =====
+// =========== task 26 modul 2 =====
 // Выполни рефакторинг кода функции calculateTotalPrice(order)
 // заменив цикл for на for...of.
 // function calculateTotalPrice(order) {
