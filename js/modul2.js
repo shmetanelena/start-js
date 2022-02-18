@@ -200,19 +200,65 @@ const loginToFind = 'poly1scute';
 //   : `Пользователь ${loginToFind} не найден.`;
 
 // console.log(message);
-// ///==========
+
+// =========== task 26 modul 3 =====
+// Выполни рефакторинг кода функции calculateTotalPrice(order)
+// заменив цикл for на for...of.
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   // Change code below this line
+//   // for (let i = 0; i < order.length; i += 1) {
+//   //   total += order[i];
+//   // }
+//   for (const value of order) {
+//     total += value;
+//   }
+//   // Change code above this line
+//   return total;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+// console.log(calculateTotalPrice([164, 48, 291]));
+// ===================
+// ========= Ф У Н К Ц И И ==============
 /*
- * Напиши скрипт поиска самого маленького числа в массиве,
- * при условии что числа уникальные (не повторяются).
+ * Напиши функцию calculateTotalPrice(items)
+ * которая принимает массив цен (чисел) и возвращает их сумму
+ */
+// //==== было так : ==========
+// // const cart = [54, 28, 105, 70, 92, 17, 120, 12, 25, 90];
+// // let total = 0;
+
+// // for (const value of cart) {
+// //   total += value;
+// // }
+
+// // console.log('Total: ', total);
+// //======== стало так с функцией ==========
+// const calculateTotalPrice = function (items) {
+//   console.log('items внутри функции: ', items);
+//   let total = 0;
+//   for (const item of items) {
+//     total += item;
+//   }
+//   return total;
+// };
+
+// const r1 = calculateTotalPrice([1, 2, 3]);
+
+// console.log(`Общая сумма покупок ${r1}`); // 6
+// console.log(calculateTotalPrice([5, 10, 15, 20])); // 50
+// console.log(calculateTotalPrice([100, 200, 300])); // 600
+// // ====================
+/*
+ * Напиши функцию logItems(items) для перебора и логирования массива
  */
 
-const numbers = [51, 18, 13, 24, 7, 85, 19];
-let smallestNumber = numbers[0];
-
-for (const number of numbers) {
-  if (number < smallestNumber) {
-    smallestNumber = number;
+const logItems = function (items) {
+  for (const item of items) {
+    console.log(item);
   }
-}
+};
 
-console.log('smallestNumber: ', smallestNumber);
+logItems(['Mango', 'Kiwi', 'Poly', 'Ajax']);
+logItems([1, 2, 3, 4, 5]);
+logItems(['клавиатура', 'наушники', 'часы']);
