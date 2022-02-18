@@ -253,6 +253,7 @@ const loginToFind = 'poly1scute';
  * Напиши функцию logItems(items) для перебора и логирования массива
  */
 
+
 // const logItems = function (items) {
 //   for (const item of items) {
 //     console.log(item);
@@ -320,3 +321,215 @@ const fn = function (a, b, c, ...args) {
 fn('hello', 1, 2, 3);
 fn('aloha', 1, 2, 3, 4, 5);
 fn('hi', 1, 2, 3, 4, 5, 6, 7);
+=======
+// const numbers = [51, 18, 13, 24, 7, 85, 19];
+// let smallestNumber = numbers[0];
+
+// for (const number of numbers) {
+//   if (number < smallestNumber) {
+//     smallestNumber = number;
+//   }
+// }
+
+// console.log('smallestNumber: ', smallestNumber);
+//========== task 23 modul 2 =====
+// function filterArray(numbers, value) {
+//   // Change code below this line
+//   const newArray = [];
+//   for (const number of numbers) {
+//     if (number > value);
+//     {
+//       newArray.push(number);
+//     }
+//   }
+
+//   return newArray;
+//   // Change code above this line
+// }
+// console.log(filterArray([1, 2, 3, 4, 5], 4));
+// console.log(filterArray([1, 2, 3, 4, 5], 4));
+// console.log(filterArray([1, 2, 3, 4, 5], 5));
+// console.log(filterArray([12, 24, 8, 41, 76], 38));
+// console.log(filterArray([12, 24, 8, 41, 76], 20));
+/*=========
+ * Напиши скрипт поиска самого маленького числа в массиве,
+ * при условии что числа уникальные (не повторяются).
+ */
+
+// const numbers = [51, 18, 13, 24, 7, 85, 19];
+// let smallestNumber = numbers[0];
+
+// for (const number of numbers) {
+//   console.log(number);
+//   if (number < smallestNumber) {
+//     smallestNumber = number;
+//   }
+// }
+// console.log('smallestNumber: ', smallestNumber);
+// //================
+// /*
+//  * Напиши скрипт, который объединяет все элементы массива в одно строковое значение.
+//  * Элементов может быть произвольное кол-во.
+//  * Пусть элементы массива  в строке будут разделены запятой.
+//  * - Сначала через for
+//  * - Потом через join()
+//  */
+
+// const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+// //
+// const string = friends.join(',');
+
+// console.log(string);
+// // let string = '';
+
+// // for (const friend of friends) {
+// //   string += friend + ',';
+// // }
+
+// // string = string.slice(0, string.length - 1);
+
+// // const string = friends.join(',');
+// // console.log(friends);
+// // console.log(string);
+
+// // Должно получиться 'Mango,Poly,Kiwi,Ajax'
+
+// ==================
+/*
+ * Напиши скрипт который заменяет регистр каждого символа в строке на противоположный.
+ * Например, если строка «JavaScript», то на выходе должена быть строка «jAVAsCRIPT».
+ */
+
+// const string = '«JavaScript»';
+// const letters = string.split('');
+// let invertedString = '';
+
+// console.log(letters);
+// for (const letter of letters) {
+//   console.log(letter);
+//   //   if (letter === letter.toLowerCase()) {
+//   //     console.log('Эта буква в нижнем регитстре!!!', letter);
+
+//   //     invertedString += letter.toUpperCase();
+//   //   } else {
+//   //     console.log('Эта буква в верхнем регистре!!! - ', letter);
+//   //     invertedString += letter.toLowerCase();
+//   //   }
+//   invertedString +=
+//     letter === letter.toLowerCase()
+//       ? letter.toUpperCase()
+//       : letter.toLowerCase();
+// }
+// console.log('invertedString: ', invertedString);
+
+//=============================
+/*
+ * Делаем slug в URL из названия статьи (например на dev.to)
+ * Заголовок статьи состоит только из букв и пробелов
+ *
+ * - Нормализируем строку
+ * - Разбиваем по словам
+ * - Сшиваем в строку с разделителями
+ */
+
+// Должно получиться top-10-benefits-of-react-framework
+// const title = 'Top 10 benefits of React framework';
+// // console.log(title);
+// // const normalizedTitle = title.toLowerCase();
+// // console.log(normalizedTitle);
+// // const words = normalizedTitle.split(' ');
+// // console.log(words);
+// // const slug = words.join('-');
+// // console.log(slug);
+
+// const slug1 = title.toLowerCase().split(' ').join('-');
+// console.log(slug1);
+
+// ==================================
+/*
+ * Напиши скрипт который считает сумму элементов двух массивов.
+ */
+
+// const array1 = [5, 10, 15, 20];
+// const array2 = [10, 20, 30];
+// let total = 0;
+// const numbers = array1.concat(array2);
+
+// for (const number of numbers) {
+//   total += number;
+// }
+
+// console.log(numbers);
+// console.log(total);
+//======================
+
+// =======
+/*
+ * Работем с коллекцией карточек в trello
+ * - Метод splice()
+ * - Удалить
+ * - Добавить
+ * - Обновить
+ */
+
+const cards = [
+  'Карточка-1',
+  'Карточка-2',
+  'Карточка-3',
+  'Карточка-4',
+  'Карточка-5',
+];
+
+console.table(cards);
+
+/*
+ * Удаление (по индексу), метод indexOf()
+ */
+
+// const cardToRemove = 'Карточка-3';
+// const index = cards.indexOf(cardToRemove);
+// console.log(index);
+
+// cards.splice(index, 1);
+
+// console.table(cards);
+
+/*
+ * Добавление (по индексу)
+ */
+// const cardToInsert = 'Карточка-6';
+// const index = 3;
+
+// cards.splice(index, 0, cardToInsert);
+// console.table(cards);
+
+/*
+ * Обновление (по индексу)
+ */
+const cardToUpdate = 'Карточка-4';
+const index = cards.indexOf(cardToUpdate);
+
+console.log(index);
+
+cards.splice(index, 1, 'Обновленная карточка-4');
+
+console.table(cards);
+
+// =========== task 26 modul 2 =====
+// Выполни рефакторинг кода функции calculateTotalPrice(order)
+// заменив цикл for на for...of.
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   // Change code below this line
+//   // for (let i = 0; i < order.length; i += 1) {
+//   //   total += order[i];
+//   // }
+//   for (const value of order) {
+//     total += value;
+//   }
+//   // Change code above this line
+//   return total;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+// console.log(calculateTotalPrice([164, 48, 291]));
+// ===================
