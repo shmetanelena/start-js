@@ -89,32 +89,45 @@
 // }
 
 // ========== пример из конспекта массив обеъктов ====
-const books = [
-  {
-    title: 'The Last Kingdom',
-    author: 'Bernard Cornwell',
-    rating: 8.38,
-  },
-  {
-    title: 'На берегу спокойных вод',
-    author: 'Роберт Шекли',
-    rating: 8.51,
-  },
-  {
-    title: 'Сон смешного человека',
-    author: 'Федор Достоевский',
-    rating: 7.75,
-  },
-];
-for (const book of books) {
-  // Объект книги
-  console.log(book);
-  // Название
-  console.log(book.title);
-  // Автор
-  console.log(book.author);
-  // Рейтинг
-  console.log(book.rating);
-}
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'На берегу спокойных вод',
+//     author: 'Роберт Шекли',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'Сон смешного человека',
+//     author: 'Федор Достоевский',
+//     rating: 7.75,
+//   },
+// ];
+// for (const book of books) {
+//   // Объект книги
+//   console.log(book);
+//   // Название
+//   console.log(book.title);
+//   // Автор
+//   console.log(book.author);
+//   // Рейтинг
+//   console.log(book.rating);
+// }
 
-// =============
+// ============= пример из конспекта Деструктуризация объектов ====
+const book = {
+  title: 'The Last Kingdom',
+  author: 'Bernard Cornwell',
+  genres: ['historical prose', 'adventure'],
+  isPublic: true,
+  rating: 8.38,
+};
+
+const accessType = book.isPublic ? 'публичном' : 'закрытом';
+const message = `Книга ${book.title} автора ${book.author} с рейтингом ${book.rating} находится в ${accessType} доступе.`;
+console.log(message);
+
+// ==================
