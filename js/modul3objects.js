@@ -52,6 +52,23 @@
 // // apartment.location.city = 'Kingston';
 
 //=============== example from modul 3
+// const book = {
+//   title: 'The Last Kingdom',
+//   author: 'Bernard Cornwell',
+//   genres: ['historical prose', 'adventure'],
+//   rating: 8.38,
+// };
+
+// for (const key in book) {
+//   // Ключ
+//   console.log(key);
+//   // Значение свойства с таким ключом
+//   console.log(book[key]);
+// }
+// console.log(book);
+//(
+// console.log([]);
+
 const book = {
   title: 'The Last Kingdom',
   author: 'Bernard Cornwell',
@@ -60,8 +77,11 @@ const book = {
 };
 
 for (const key in book) {
-  // Ключ
-  console.log(key);
-  // Значение свойства с таким ключом
-  console.log(book[key]);
+  // Если это собственное свойство - выполняем тело if
+  if (book.hasOwnProperty(key)) {
+    console.log(key);
+    console.log(book[key]);
+  }
+
+  // Если это не собственное свойство - ничего не делаем
 }
