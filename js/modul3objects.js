@@ -69,19 +69,52 @@
 //(
 // console.log([]);
 
-const book = {
-  title: 'The Last Kingdom',
-  author: 'Bernard Cornwell',
-  genres: ['historical prose', 'adventure'],
-  rating: 8.38,
-};
+// ======== задвние из конспекта hasOwnProperty======
 
-for (const key in book) {
-  // Если это собственное свойство - выполняем тело if
-  if (book.hasOwnProperty(key)) {
-    console.log(key);
-    console.log(book[key]);
-  }
+// const book = {
+//   title: 'The Last Kingdom',
+//   author: 'Bernard Cornwell',
+//   genres: ['historical prose', 'adventure'],
+//   rating: 8.38,
+// };
 
-  // Если это не собственное свойство - ничего не делаем
+// for (const key in book) {
+//   // Если это собственное свойство - выполняем тело if
+//   if (book.hasOwnProperty(key)) {
+//     console.log(key);
+//     console.log(book[key]);
+//   }
+
+//   // Если это не собственное свойство - ничего не делаем
+// }
+
+// ========== пример из конспекта массив обеъктов ====
+const books = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'На берегу спокойных вод',
+    author: 'Роберт Шекли',
+    rating: 8.51,
+  },
+  {
+    title: 'Сон смешного человека',
+    author: 'Федор Достоевский',
+    rating: 7.75,
+  },
+];
+for (const book of books) {
+  // Объект книги
+  console.log(book);
+  // Название
+  console.log(book.title);
+  // Автор
+  console.log(book.author);
+  // Рейтинг
+  console.log(book.rating);
 }
+
+// =============
