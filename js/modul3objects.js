@@ -118,16 +118,107 @@
 // }
 
 // ============= пример из конспекта Деструктуризация объектов ====
-const book = {
-  title: 'The Last Kingdom',
-  author: 'Bernard Cornwell',
-  genres: ['historical prose', 'adventure'],
-  isPublic: true,
-  rating: 8.38,
-};
+// const book = {
+//   title: 'The Last Kingdom',
+//   author: 'Bernard Cornwell',
+//   genres: ['historical prose', 'adventure'],
+//   isPublic: true,
+//   rating: 8.38,
+// };
 
-const accessType = book.isPublic ? 'публичном' : 'закрытом';
-const message = `Книга ${book.title} автора ${book.author} с рейтингом ${book.rating} находится в ${accessType} доступе.`;
-console.log(message);
+// const accessType = book.isPublic ? 'публичном' : 'закрытом';
+// const message = `Книга ${book.title} автора ${book.author} с рейтингом ${book.rating} находится в ${accessType} доступе.`;
+// console.log(message);
 
-// ==================
+// ================== задача 41 модуль 3 =======
+// const atTheOldToad = {
+//   potions: [
+//     { name: 'Speed potion', price: 460 },
+//     { name: 'Dragon breath', price: 780 },
+//     { name: 'Stone skin', price: 520 },
+//   ],
+//   // Change code below this line
+//   getPotions() {
+//     return this.potions;
+//   },
+//   indexOfPotion(name) {
+//     for (const i = 0; i < this.potions.length; i += 1) {
+//       if (this.potions[i].name === name) {
+//         return i;
+//       }
+//     }
+//     return -1;
+//   },
+
+//   addPotion(newPotion) {
+//     if (this.indexOfPotion(newPotion.name) !== -1) {
+//       return `Error! Potion ${newPotion} is already in your inventory!`;
+//     }
+
+//     this.potions.push(newPotion);
+//   },
+
+//   removePotion(potionName) {
+//     const potionIndex = this.indexOfPotion(potionName);
+
+//     if (potionIndex === -1) {
+//       return `Potion ${potionName} is not in inventory!`;
+//     }
+
+//     this.potions.splice(potionIndex, 1);
+//   },
+
+//   updatePotionName(oldName, newName) {
+//     const potionIndex = this.indexOfPotion(oldName);
+
+//     if (potionIndex === -1) {
+//       return `Potion ${oldName} is not in inventory!`;
+//     }
+
+//     const newPotion = { name: newName, price: this.potions[potionIndex].price };
+
+//     this.potions.splice(potionIndex, 1, newPotion);
+//   },
+
+//   // Change code above this line
+// };
+
+// ============= Несколько колбэков
+// function processCall(recipient, onAvailable, onNotAvailable) {
+//   // Имитируем доступность абонента случайным числом
+//   const isRecipientAvailable = Math.random() > 0.5;
+
+//   if (!isRecipientAvailable) {
+//     onNotAvailable(recipient);
+//     return;
+//   }
+
+//   onAvailable(recipient);
+// }
+
+// function takeCall(name) {
+//   console.log(`Соединяем с ${name}, ожидайте...`);
+//   // Логика принятия звонка
+// }
+
+// function activateAnsweringMachine(name) {
+//   console.log(`Абонент ${name} недоступен, оставьте сообщение.`);
+//   // Логика активации автоответчика
+// }
+
+// function leaveHoloMessage(name) {
+//   console.log(`Абонент ${name} недоступен, записываем голограмму.`);
+//   // Логика записи голограммы
+// }
+
+// processCall('Манго', takeCall, activateAnsweringMachine);
+// processCall('Поли', takeCall, leaveHoloMessage);
+
+// //========== Абстрагирование повторения
+// function repeatLog(n) {
+//   for (let i = 0; i < n; i += 1) {
+//     console.log(i);
+//   }
+// }
+
+// repeatLog(5);

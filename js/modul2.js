@@ -390,14 +390,14 @@ console.table(cards);
 /*
  * Обновление (по индексу)
  */
-const cardToUpdate = 'Карточка-4';
-const index = cards.indexOf(cardToUpdate);
+// const cardToUpdate = 'Карточка-4';
+// const index = cards.indexOf(cardToUpdate);
 
-console.log(index);
+// console.log(index);
 
-cards.splice(index, 1, 'Обновленная карточка-4');
+// cards.splice(index, 1, 'Обновленная карточка-4');
 
-console.table(cards);
+// console.table(cards);
 
 // =========== task 26 modul 3 =====
 // Выполни рефакторинг кода функции calculateTotalPrice(order)
