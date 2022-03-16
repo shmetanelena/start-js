@@ -57,27 +57,146 @@
 }
 //  === task 3
 {
+    const historyService = {
+        orders: [
+            { email: 'jacob@hotmail.com', dish: 'Burrito' },
+            { email: 'solomon@topmail.net', dish: 'Burger' },
+            { email: 'artemis@coldmail.net', dish: 'Pizza' },
+            { email: 'solomon@topmail.net', dish: 'Apple pie' },
+            { email: 'jacob@hotmail.com', dish: 'Taco' },
+        ],
+        // Change code below this line
+        getOrdersLog() {
+            return this.orders
+                .map(order => `email: ${order.email} dish: ${order.dish}`)
+                .join(' - ');
+        },
+        getEmails() {
+            const emails = this.orders.map(order => order.email);
+            const uniqueEmails = new Set(emails);
+            return [...uniqueEmails];
+        },
+        getOrdersByEmail(email) {
+            return this.orders.filter(order => order.email === email);
+        },
+        // Change code above this line
+    };
+    // console.log(historyService.getOrdersLog());
+    console.log(historyService.getOrdersByEmail('solomon@topmail.net'));
 }
 //  === task 4
 {
+    const parent = {
+        name: 'Stacey',
+        surname: 'Moore',
+        age: 54,
+        heritage: 'Irish',
+    };
+    // Change code below this line
+
+    const child = Object.create(parent);
+
+    // Change code above this line
+    child.name = 'Jason';
+    child.age = 27;
+    console.log(parent.hasOwnProperty('surname'));
+    console.log(parent.hasOwnProperty('heritage'));
+    console.log(child.hasOwnProperty('name'));
+    console.log(child.hasOwnProperty('age'));
+    console.log(child.hasOwnProperty('surname'));
+    console.log(child.hasOwnProperty('heritage'));
+    console.log(parent.isPrototypeOf('child'));
 }
 //  === task 5
 {
+    const ancestor = {
+        name: 'Paul',
+        age: 83,
+        surname: 'Dawson',
+        heritage: 'Irish',
+    };
+    // Change code below this line
+
+    const parent = Object.create(ancestor);
+    parent.name = 'Stacey';
+    parent.surname = 'Moore';
+    parent.age = 54;
+
+    const child = Object.create(parent);
+    child.name = 'Jason';
+    child.age = 27;
+
+    // Change code above this line
 }
 //  === task 6
 {
+    class Car {}
 }
 //  === task 7
 {
+    class Car {
+        // Change code below this line
+        constructor(brand, model, price) {
+            this.brand = brand;
+            this.model = model;
+            this.price = price;
+        }
+
+        // Change code above this line
+    }
+    console.log(new Car('Audi', 'Q3', 36000));
 }
 //  === task 8
 {
+    class Car {
+        // Change code below this line
+        constructor({ brand, model, price }) {
+            this.brand = brand;
+            this.model = model;
+            this.price = price;
+        }
+        // Change code above this line
+    }
 }
 //  === task 9
 {
+    class Car {
+        constructor({ brand, model, price }) {
+            this.brand = brand;
+            this.model = model;
+            this.price = price;
+        }
+        // Change code below this line
+        getPrice() {
+            return this.price;
+        }
+
+        changePrice(newPrice) {
+            this.price = newPrice;
+        }
+
+        // Change code above this line
+    }
 }
 //  === task 10
 {
+    class Storage {
+        constructor(items) {
+            this.items = items;
+        }
+        getItems() {
+            return this.items;
+        }
+        addItem(newItem) {
+            this.items.push(newItem);
+        }
+        removeItem(itemToRemove) {
+            const pos = this.items.indexOf(itemToRemove);
+            if (pos !== -1) {
+                this.items.splice(pos, 1);
+            }
+        }
+    }
 }
 //  === task 11
 {
