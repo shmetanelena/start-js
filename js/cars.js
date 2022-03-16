@@ -208,7 +208,7 @@ const cars = [
 
 {
     console.log('=== 11 ===');
-    const getModelsOnSale = cars => {};
+    const getModelsOnSale = cars => cars.filter(car => car.onSale);
 
     console.table(getModelsOnSale(cars));
 }
@@ -223,4 +223,11 @@ const cars = [
         cars.filter(car => car.onSale).sort((a, b) => a.price - b.price);
 
     console.table(getSortedCarsOnSale(cars));
+}
+{
+    function foo() {
+        console.log(this);
+    }
+
+    foo();
 }
