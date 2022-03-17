@@ -105,7 +105,7 @@
     console.log(child.hasOwnProperty('age'));
     console.log(child.hasOwnProperty('surname'));
     console.log(child.hasOwnProperty('heritage'));
-    console.log(parent.isPrototypeOf('child'));
+    console.log(parent.isPrototypeOf(child));
 }
 //  === task 5
 {
@@ -200,7 +200,34 @@
 }
 //  === task 11
 {
+    class StringBuilder {
+        constructor(initialValue) {
+            this.value = initialValue;
+        }
+        getValue() {
+            return this.value;
+        }
+        padEnd(str) {
+            this.value = this.value + str;
+        }
+        padStart(str) {
+            this.value = str + this.value;
+        }
+        padBoth(str) {
+            this.value = str + this.value + str;
+        }
+    }
 }
+// Change code above this line
+const builder = new StringBuilder('.');
+console.log(builder.getValue()); // "."
+builder.padStart('^');
+console.log(builder.getValue()); // "^."
+builder.padEnd('^');
+console.log(builder.getValue()); // "^.^"
+builder.padBoth('=');
+console.log(builder.getValue()); // "=^.^="
+
 //  === task 12
 {
 }
