@@ -230,12 +230,90 @@ console.log(builder.getValue()); // "=^.^="
 
 //  === task 12
 {
+    class Car {
+        // Change code below this line
+        #brand;
+        constructor({ brand, model, price }) {
+            this.#brand = brand;
+            this.model = model;
+            this.price = price;
+        }
+        getBrand() {
+            return this.#brand;
+        }
+        changeBrand(newBrand) {
+            this.#brand = newBrand;
+        }
+
+        // Change code above this line
+    }
 }
 //  === task 13
 {
+    class Storage {
+        // Change code below this line
+        #items;
+        constructor(items) {
+            this.#items = items;
+        }
+
+        getItems() {
+            return this.#items;
+        }
+
+        addItem(newItem) {
+            this.#items.push(newItem);
+        }
+
+        removeItem(itemToRemove) {
+            this.#items = this.#items.filter(item => item !== itemToRemove);
+        }
+    }
+
+    // Change code above this line
+    const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
+    console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+    storage.addItem('Droid');
+    console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+    storage.removeItem('Prolonger');
+    console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
 }
 //  === task 14
 {
+    class StringBuilder {
+        // Change code below this line
+        #value;
+        constructor(initialValue) {
+            this.#value = initialValue;
+        }
+
+        getValue() {
+            return this.#value;
+        }
+
+        padEnd(str) {
+            this.#value += str;
+        }
+
+        padStart(str) {
+            this.#value = str + this.#value;
+        }
+
+        padBoth(str) {
+            this.padStart(str);
+            this.padEnd(str);
+        }
+    }
+
+    // Change code above this line
+    const builder = new StringBuilder('.');
+    console.log(builder.getValue()); // "."
+    builder.padStart('^');
+    console.log(builder.getValue()); // "^."
+    builder.padEnd('^');
+    console.log(builder.getValue()); // "^.^"
+    builder.padBoth('=');
+    console.log(builder.getValue()); // "=^.^="
 }
 //  === task 15
 {
