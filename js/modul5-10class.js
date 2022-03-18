@@ -16,8 +16,23 @@
         Добавь метод updatePostCount(value), который в параметре 
         value принимает количество постов которые нужно добавить пользователю.
     */
-    const mango = new User({
-        name: 'mango@mail.com',
+
+    class Blogger {
+        constructor({ email, age, numberOfPosts, topics }) {
+            this.email = email;
+            this.age = age;
+            this.numberOfPosts = numberOfPosts;
+            this.topics = topics;
+        }
+        getInfo() {
+            return `User ${this.email} is ${this.age} years old and has ${this.numberOfPosts} posts.`;
+        }
+        updatePostCount(value) {
+            this.numberOfPosts += value;
+        }
+    }
+    const mango = new Blogger({
+        email: 'mango@mail.com',
         age: 24,
         numberOfPosts: 20,
         topics: ['tech', 'cooking'],
@@ -26,8 +41,8 @@
     mango.updatePostCount(5);
     console.log(mango.getInfo()); // User mango@mail.com is 24 years old and has 25 posts
 
-    const poly = new User({
-        name: 'poly@mail.com',
+    const poly = new Blogger({
+        email: 'poly@mail.com',
         age: 19,
         numberOfPosts: 17,
         topics: ['sports', 'gaming', 'health'],
@@ -35,6 +50,7 @@
     console.log(poly.getInfo()); // User poly@mail.com is 19 years old and has 17 posts
     poly.updatePostCount(4);
     console.log(poly.getInfo()); // User poly@mail.com is 19 years old and has 21 posts }
+    //process.exit();
 }
 {
     /*Example 2 - Хранилище
@@ -47,8 +63,25 @@
     getItems() - возвращает массив товаров.
     addItem(item) - получает новый товар и добавляет его к текущим.
     removeItem(item) - получает товар и, если он есть, удаляет его из текущих.
+    */
+    class Storage {
+        constructor(items) {
+            this.items = items;
+        }
+        getItems() {
+            return this.items;
+        }
+        addItem(item) {
+            this.items.push(item);
+        }
+        removeItem(item) {
+            const pos = this.items.indexOf(item);
+            if (pos !== -1) {
+                this.items.splice(pos, 1);
+            }
+        }
+    }
     const storage = new Storage(['🍎', '🍋', '🍇', '🍑']);
-*/
     const items = storage.getItems();
     console.table(items); // [ '🍎', '🍋', '🍇', '🍑' ]
 
@@ -64,6 +97,26 @@
 Напиши класс User который создаёт объект со свойствами login и email. 
 Объяви приватные свойства #login и #email, доступ к которым сделай через геттер и сеттер login и email.
 */
+    class User {
+        #login;
+        #email;
+        constructor({ login, email }) {
+            this.#login = login;
+            this.#email = email;
+        }
+        get login() {
+            return this.#login;
+        }
+        set login(newLogin) {
+            this.#login = newLogin;
+        }
+        get email() {
+            return this.#email;
+        }
+        set email(newEmail) {
+            this.#email = newEmail;
+        }
+    }
     const mango = new User({
         login: 'Mango',
         email: 'mango@dog.woof',
@@ -86,7 +139,7 @@
     //     Example 4 - Заметки
 
     // Напиши класс Notes который управляет коллекцией заметок
-    //в свойстве items.Заметка это объект со свойствами text и priority.
+    //в свойстве items. Заметка это объект со свойствами text и priority.
     //Добавь классу статическое свойство Priority,
     //в котором будет храниться объект с приоритетами.
 
@@ -97,6 +150,32 @@
     }
     Добавь методы addNote(note), removeNote(text) и updatePriority(text, newPriority).
     */
+    class Notes {
+        static Priority = {
+            LOW: 'low',
+            NORMAL: 'normal',
+            HIGH: 'high',
+        };
+
+        constructor(items) {
+            this.items = items;
+        }
+        addNote(note) {
+            this.items.push(note);
+        }
+        removeNote(text) {
+            const pos = this.items.findIndex(note => note.text === text);
+            if (pos !== -1) {
+                this.items.splice(pos, 1);
+            }
+        }
+        updatePriority(text, newPriority) {
+            const note = this.items.find(note => note.text === text);
+            if (note) {
+                note.priority = newPriority;
+            }
+        }
+    }
     const myNotes = new Notes([]);
 
     myNotes.addNote({
@@ -114,8 +193,9 @@
     myNotes.removeNote('Моя первая заметка');
     console.log(myNotes.items);
 
-    myNotes.updateNote('Моя вторая заметка', Notes.Priority.HIGH);
+    myNotes.updatePriority('Моя вторая заметка', Notes.Priority.HIGH);
     console.log(myNotes.items);
+    // process.exit();
 }
 {
     //         Example 5 - Toggle
@@ -124,7 +204,21 @@
     //настроек { isOpen: boolean } и объявляет одно
     //свойство on - состояние вкл / выкл(true / false).
     //По умолчанию значение свойства on должно быть false.
-
+    class Toggle {
+        on = false;
+        constructor(obj) {
+            if (
+                obj &&
+                obj.isOpen !== undefined &&
+                typeof obj.isOpen === 'boolean'
+            ) {
+                this.on = obj.isOpen;
+            }
+        }
+        toggle() {
+            this.on = !this.on;
+        }
+    }
     const firstToggle = new Toggle({ isOpen: true });
     console.group('firstToggle');
     console.log(firstToggle.on);
