@@ -90,7 +90,7 @@ const users = [
 2.7  getAllFriends()
 2.8  getTotalBalance()
 2.9  showInfo  выводит в консоль табле информация по всем пользователям, а также должна вывести
-     общее число всех друзей и текущий общий баланс
+    общее число всех друзей и текущий общий баланс
 
 3  Тестирование
 3.1 Создать скласс UserStore с пустым массивом 
@@ -99,3 +99,112 @@ const users = [
 3.3 при каждом добавлении нового пользователя вызываем showInfo
 3.4 поудалять user
 */
+
+class User {
+    static Gender = {
+        MALE: 'male',
+        FEMALE: 'female',
+    };
+    static EyeColor = {
+        BLUE: 'blue',
+        GREEN: 'green',
+        GRAY: 'gray',
+        BROWN: 'brown',
+    };
+
+    #name;
+    #email;
+    #eyeColor;
+    #friends = ' ';
+    #isActive = true;
+    #balance = 0;
+    #gender;
+
+    constructor({ name, email, eyeColor, friends, isActive, balance, gender }) {
+        this.#name = name;
+        this.#email = email;
+        if (eyeColor == User.EyeColor) {
+            this.#eyeColor = eyeColor;
+        }
+        this.#friends = friends;
+        if (typeof isActive == 'boolean') {
+            this.#isActive = isActive;
+        }
+        if (typeof balance == 'number') {
+            this.#balance = balance;
+        }
+        if (gender == User.Gender) {
+            this.#gender = gender;
+        }
+    }
+    get name() {
+        return this.#name;
+    }
+    set name(newName) {
+        if (newName === '') {
+            console.error('Ошибка! Имя не может быть пустой строкой!');
+            return;
+        }
+
+        this.#email = newEmail;
+    }
+    get email() {
+        return this.#email;
+    }
+    set email(newEmail) {
+        if (newEmail === '') {
+            console.error('Ошибка! Почта не может быть пустой строкой!');
+            return;
+        }
+
+        this.#email = newEmail;
+    }
+    get eyeColor() {
+        return this.#eyeColor;
+    }
+    set eyeColor(newEyeColor) {
+        this.#eyeColor = newEyeColor;
+    }
+
+    get isActive() {
+        return this.#isActive;
+    }
+    set isActive(newIsActive) {
+        this.#isActive = newIsActive;
+    }
+
+    get balance() {
+        return this.#balance;
+    }
+    set balance(newBalance) {
+        if (newBalance > 10000) {
+            console.error('Ошибка! Баланс не может быть больше 10000!');
+            return;
+        }
+
+        this.#balance = newBalance;
+    }
+
+    get gender() {
+        return this.#gender;
+    }
+    set gender(newGender) {
+        this.#gender = newGender;
+    }
+
+    getFriends() {
+        return this.#friends;
+    }
+    setFriends(name) {
+        if (name != this.#name) {
+            this.#friends.push(name);
+            // ???????????????????
+        }
+    }
+    removeFriend(name) {
+        const pos = this.#friends.indexOf(name);
+        if (pos !== -1) {
+            this.#friends.splice(pos, 1);
+        }
+    }
+}

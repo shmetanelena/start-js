@@ -634,57 +634,58 @@ const isEveryUserActive = (users) =>
 }
 // === 32 map
 {
-const firstArray = [26, 94, 36, 18];
-const secondArray = [17, 61, 23];
-const thirdArray = [17, 26, 94, 61, 36, 23, 18];
-// Change below this line
+  const firstArray = [26, 94, 36, 18];
+  const secondArray = [17, 61, 23];
+  const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+  // Change below this line
 
-const anyElementInFirstIsEven = firstArray.some(val => val % 2 === 0);
-const anyElementInFirstIsOdd = firstArray.some(val => val % 2 !== 0);
+  const anyElementInFirstIsEven = firstArray.some(val => val % 2 === 0);
+  const anyElementInFirstIsOdd = firstArray.some(val => val % 2 !== 0);
 
-const anyElementInSecondIsEven = secondArray.some(val => val % 2 === 0);
-const anyElementInSecondIsOdd = secondArray.some(val => val % 2 !== 0);
+  const anyElementInSecondIsEven = secondArray.some(val => val % 2 === 0);
+  const anyElementInSecondIsOdd = secondArray.some(val => val % 2 !== 0);
 
-const anyElementInThirdIsEven = thirdArray.some(val => val % 2 === 0);
-const anyElementInThirdIsOdd = thirdArray.some(val => val % 2 !== 0);
+  const anyElementInThirdIsEven = thirdArray.some(val => val % 2 === 0);
+  const anyElementInThirdIsOdd = thirdArray.some(val => val % 2 !== 0);
 
-// === 33 filter
-{
+  // === 33 filter
+  {
     // Change code below this line
-const isAnyUserActive = users => 
-   users.some(user => user.isActive)
-;
-// Change code above this line
-}
-// === 34
-{
+    const isAnyUserActive = users =>
+      users.some(user => user.isActive)
+      ;
+    // Change code above this line
+  }
+  // === 34
+  {
     const players = {
-  mango: 1270,
-  poly: 468,
-  ajax: 710,
-  kiwi: 244
-};
-const playtimes = Object.values(players); // [1270, 468, 710, 244]
-// Change code below this line
+      mango: 1270,
+      poly: 468,
+      ajax: 710,
+      kiwi: 244
+    };
+    const playtimes = Object.values(players); // [1270, 468, 710, 244]
+    // Change code below this line
 
-const totalPlayTime = playtimes.reduce((prevVal, playtime) => prevVal + playtime, 0);
+    const totalPlayTime = playtimes.reduce((prevVal, playtime) => prevVal + playtime, 0);
 
-// Change code above this line
-const averagePlayTime = totalPlayTime / playtimes.length;
-}
-// === 35
-{
-const players = [
-  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
-  { name: "Poly", playtime: 469, gamesPlayed: 2 },
-  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
-  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
-];
-// Change code below this line
+    // Change code above this line
+    const averagePlayTime = totalPlayTime / playtimes.length;
+  }
+  // === 35
+  {
+    const players = [
+      { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+      { name: "Poly", playtime: 469, gamesPlayed: 2 },
+      { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+      { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+    ];
+    // Change code below this line
 
-const totalAveragePlaytimePerGame = players.reduce((prevVal, player) => player.playtime / player.gamesPlayed + prevVal, 0) ;    
+    const totalAveragePlaytimePerGame = players.reduce((prevVal, player) => player.playtime / player.gamesPlayed + prevVal, 0);
         
     
+  }
 }
 // === 36
 {
