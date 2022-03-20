@@ -90,7 +90,7 @@ const users = [
 2.7  getAllFriends()
 2.8  getTotalBalance()
 2.9  showInfo  выводит в консоль табле информация по всем пользователям, а также должна вывести
-     общее число всех друзей и текущий общий баланс
+    общее число всех друзей и текущий общий баланс
 
 3  Тестирование
 3.1 Создать скласс UserStore с пустым массивом 
@@ -201,5 +201,10 @@ class User {
             // ???????????????????
         }
     }
-    removeFriend(name) {}
+    removeFriend(name) {
+        const pos = this.#friends.indexOf(name);
+        if (pos !== -1) {
+            this.#friends.splice(pos, 1);
+        }
+    }
 }
