@@ -104,107 +104,256 @@ class User {
     static Gender = {
         MALE: 'male',
         FEMALE: 'female',
+
+        isValid: function (value) {
+            return value === this.MALE || value === this.FEMALE;
+        },
     };
+
     static EyeColor = {
         BLUE: 'blue',
         GREEN: 'green',
         GRAY: 'gray',
         BROWN: 'brown',
+
+        isValid: function (value) {
+            return (
+                value === this.BLUE ||
+                value === this.GREEN ||
+                value === this.GRAY ||
+                value === this.BROWN
+            );
+        },
     };
 
     #name;
     #email;
     #eyeColor;
-    #friends = ' ';
+    #friends = [];
     #isActive = true;
     #balance = 0;
     #gender;
 
-    constructor({ name, email, eyeColor, friends, isActive, balance, gender }) {
-        this.#name = name;
-        this.#email = email;
-        if (eyeColor == User.EyeColor) {
-            this.#eyeColor = eyeColor;
-        }
-        this.#friends = friends;
-        if (typeof isActive == 'boolean') {
-            this.#isActive = isActive;
-        }
-        if (typeof balance == 'number') {
-            this.#balance = balance;
-        }
-        if (gender == User.Gender) {
-            this.#gender = gender;
+    constructor({ name, email, gender, eyeColor, isActive, balance, friends }) {
+        this.name = name;
+        this.email = email;
+        this.gender = gender;
+        this.eyeColor = eyeColor;
+        this.isActive = isActive;
+        this.balance = balance;
+        if (friends && Array.isArray(friends)) {
+            this.#friends = friends;
         }
     }
+
+    log() {
+        console.log(
+            `User name:${this.#name}, email: ${this.#email}, gender: ${
+                this.#gender
+            }, eyeColor: ${this.#eyeColor}, isActive: ${
+                this.#isActive
+            }, balance: ${this.#balance}, friends: [${this.#friends}]`
+        );
+    }
+
+    /*error(message) { 
+        console.error(message);
+    }*/
+
     get name() {
         return this.#name;
     }
-    set name(newName) {
-        if (newName === '') {
-            console.error('Ошибка! Имя не может быть пустой строкой!');
-            return;
-        }
 
-        this.#email = newEmail;
+    set name(value) {
+        if (typeof value === 'string' && value !== '') {
+            this.#name = value;
+        } else {
+            console.error('Ошибка! Имя не может быть пустой строкой!');
+        }
     }
+
     get email() {
         return this.#email;
     }
-    set email(newEmail) {
-        if (newEmail === '') {
+
+    set email(value) {
+        if (typeof value === 'string' && value !== '') {
+            this.#email = value;
+        } else {
             console.error('Ошибка! Почта не может быть пустой строкой!');
-            return;
         }
-
-        this.#email = newEmail;
-    }
-    get eyeColor() {
-        return this.#eyeColor;
-    }
-    set eyeColor(newEyeColor) {
-        this.#eyeColor = newEyeColor;
-    }
-
-    get isActive() {
-        return this.#isActive;
-    }
-    set isActive(newIsActive) {
-        this.#isActive = newIsActive;
-    }
-
-    get balance() {
-        return this.#balance;
-    }
-    set balance(newBalance) {
-        if (newBalance > 10000) {
-            console.error('Ошибка! Баланс не может быть больше 10000!');
-            return;
-        }
-
-        this.#balance = newBalance;
     }
 
     get gender() {
         return this.#gender;
     }
-    set gender(newGender) {
-        this.#gender = newGender;
-    }
 
-    getFriends() {
-        return this.#friends;
-    }
-    setFriends(name) {
-        if (name != this.#name) {
-            this.#friends.push(name);
-            // ???????????????????
+    set gender(value) {
+        if (User.Gender.isValid(value)) {
+            this.#gender = value;
+        } else {
+            console.error('Wrong gender: ' + value);
         }
     }
+
+    get eyeColor() {
+        return this.#eyeColor;
+    }
+
+    set eyeColor(value) {
+        if (User.EyeColor.isValid(value)) {
+            this.#eyeColor = value;
+        } else {
+            console.error('Wrong eyeColor: ' + value);
+        }
+    }
+
+    get isActive() {
+        return this.#isActive;
+    }
+
+    set isActive(value) {
+        if (typeof value == 'boolean') {
+            this.#isActive = value;
+        } else {
+            console.error('Wrong isActive: ' + value);
+        }
+    }
+
+    get balance() {
+        return this.#balance;
+    }
+
+    set balance(value) {
+        if (typeof value == 'number' || value < 10000) {
+            this.#balance = value;
+        } else {
+            console.error('Wrong balance: ' + value);
+        }
+    }
+
+    get friends() {
+        return this.#friends;
+    }
+
+    addFriend(name) {
+        if (typeof name == 'string' && name !== '' && name !== this.#name) {
+            this.#friends.push(name);
+        } else {
+            console.error('Wrong friend: ' + name);
+        }
+    }
+
     removeFriend(name) {
         const pos = this.#friends.indexOf(name);
         if (pos !== -1) {
             this.#friends.splice(pos, 1);
         }
     }
+}
+{
+    const user = new User({
+        name: 'Polly',
+        email: 'sss@.gmail.com',
+        gender: User.Gender.FEMALE,
+        eyeColor: User.EyeColor.BLUE,
+        isActive: true,
+        balance: 5000,
+        friends: ['Ann', 'Www'],
+    });
+    // === поприсваивать некорректные значения =====
+    console.log(' ===== \n');
+    user.log();
+    user.gender = 'hz';
+    user.gender = User.Gender.MALE;
+    user.addFriend('Polly');
+    user.addFriend('Vasja');
+
+    user.log();
+
+    console.log('\n ======');
+}
+console.log('');
+{
+    /*    const usersClasses = [];
+    for (let i = 0; i < users.length; i++) {
+        const user = users[i];
+        const userClass = new User(user);
+        usersClasses.push(userClass);
+    }
+*/
+
+    const usersClasses = users.map(user => new User(user));
+    usersClasses.forEach(user => user.log());
+
+    //const totalBalance = ;
+    //const allFriendsUnique =;
+    //const activeUsers = ;
+    //const USER_NAMES - это строка, которая состоит из имен пользователей в ВЕРХНЕМ РЕГИСТРЕ и разделленные символом - 'MOORE HENSLEY -'
+
+    console.log('');
+    // user.log();
+
+    // Объекты через функции
+    function UserObject(
+        name,
+        email,
+        gender,
+        eyeColor,
+        isActive,
+        balance,
+        friends
+    ) {
+        this.name = name;
+        this.email = email;
+        this.gender = gender;
+        this.eyeColor = eyeColor;
+        this.isActive = isActive;
+        this.balance = balance;
+        if (friends && Array.isArray(friends)) {
+            this.friends = friends;
+        }
+
+        this.addFriend = function (name) {
+            if (typeof name == 'string' && name !== '' && name !== this.name) {
+                this.friends.push(name);
+            } else {
+                console.error('Wrong friend: ' + name);
+            }
+        };
+    }
+
+    {
+        const userObj = new UserObject('Ivan', 'maile@mail.com', 'male');
+    }
+    /* 
+2. Создать класс UserStore. Он содержит поле #users - массив классов User. ()
+2.1  
+2.2  addUser(user) - (user) это обект класса User 
+2.3  removeUser(name)
+2.4  changeUserEmail(name, newEmail)
+2.5  getUsers()
+2.6  getUser(name)
+2.7  getAllFriends()
+2.8  getTotalBalance()
+2.9  showInfo  выводит в консоль табле информация по всем пользователям, а также должна вывести
+    общее число всех друзей и текущий общий баланс
+
+3  Тестирование
+3.1 Создать скласс UserStore с пустым массивом 
+3.2 Заполнить класс UserStore обектами класса User с помощью функции addUser.
+    Класс User мы создаем из обектов массива users (смотри сроку нр 1 этого модуля)
+3.3 при каждом добавлении нового пользователя вызываем showInfo
+3.4 поудалять user
+*/
+    // class UserStore {
+    //     constructor(users) {
+
+    //     }
+    //     removeUser(name) {
+    //         const pos = this.
+    //             if(pos !== -1) {
+    //                 splice
+    //             }
+    //     }
 }
