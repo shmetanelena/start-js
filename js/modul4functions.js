@@ -8,21 +8,23 @@
 // logProduct(product) - коллбек принимающий обьект продукта и логирующий его в консоль
 // logTotalPrice(product) - коллбек принимающий обьект продукта и логирующий общую стоимость товара в консоль
 // // Решение
-function createProduct(partialProduct, callback) {
-  const product = { id: Date.now(), ...partialProduct };
-  callback(product);
-}
+{
+    function createProduct(partialProduct, callback) {
+        const product = { id: Date.now(), ...partialProduct };
+        callback(product);
+    }
 
-function logProduct(product) {
-  console.log(product);
-}
+    function logProduct(product) {
+        console.log(product);
+    }
 
-function logTotalPrice(product) {
-  console.log(product.price * product.quantity);
-}
+    function logTotalPrice(product) {
+        console.log(product.price * product.quantity);
+    }
 
-createProduct({ name: '🍎', price: 30, quantity: 3 }, logProduct);
-createProduct({ name: '🍋', price: 20, quantity: 5 }, logTotalPrice);
+    createProduct({ name: '🍎', price: 30, quantity: 3 }, logProduct);
+    createProduct({ name: '🍋', price: 20, quantity: 5 }, logTotalPrice);
+}
 // Example 2 - Коллбек функции
 
 // Добавьте объекту account методы withdraw(amount, onSuccess, onError) и deposit(amount, onSuccess, onError), где первый параметр это сумма операции, а второй и третий - колбеки.
@@ -360,3 +362,107 @@ createProduct({ name: '🍋', price: 20, quantity: 5 }, logTotalPrice);
 // const getSortedCarsOnSale = cars => {};
 
 // console.table(getSortedCarsOnSale(cars));
+// Task 1 autocheck
+{
+    function makePizza() {
+        return 'Your pizza is being prepared, please wait.';
+    }
+    // Change code below this line
+
+    const result = makePizza();
+    const pointer = makePizza;
+
+    console.log(result);
+    console.log(pointer);
+}
+// Task 2 autocheck
+{
+    function deliverPizza(pizzaName) {
+        return `Delivering ${pizzaName} pizza.`;
+    }
+
+    function makePizza(pizzaName) {
+        return `Pizza ${pizzaName} is being prepared, please wait...`;
+    }
+
+    // Chande code below this line
+    function makeMessage(pizzaName, callback) {
+        return callback(pizzaName);
+    }
+}
+// Task 3 autocheck
+{
+  function makePizza(pizzaName, callback) {
+  console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+  callback(pizzaName);
+}
+
+makePizza("Royal Grand", function deliverPizza(pizzaName) {
+  console.log(`Delivering pizza ${pizzaName}.`);
+});
+// Change code below this line
+
+makePizza("Ultracheese", function eatPizza(pizzaName){
+  console.log(`Eating pizza ${pizzaName}`);
+});
+}
+// Task 4 autocheck
+{
+  onst pizzaPalace = {
+  pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+  order(pizzaName, onSuccess, onError) {
+    if(!this.pizzas.includes(pizzaName)){
+      return onError(`There is no pizza with a name ${pizzaName} in the assortment.`);
+    }
+    return onSuccess(pizzaName);
+  },
+};
+// Change code above this line
+
+// Callback for onSuccess
+function makePizza(pizzaName) {
+  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+}
+
+// Callback for onError
+function onOrderError(error) {
+  return `Error! ${error}`;
+}
+
+// Method calls with callbacks
+pizzaPalace.order('Smoked', makePizza, onOrderError);
+pizzaPalace.order('Four meats', makePizza, onOrderError);
+pizzaPalace.order('Big Mike', makePizza, onOrderError);
+pizzaPalace.order('Vienna', makePizza, onOrderError);
+
+}
+// Task 5 autocheck
+{
+}
+// Task 6 autocheck
+{
+}
+// Task 7 autocheck
+{
+}
+// Task 8 autocheck
+{
+}
+// Task 9 autocheck
+{
+}
+// Task 10 autocheck
+{
+}
+// Task 11 autocheck
+{
+}
+// Task 12 autocheck
+{
+}
+// Task 13 autocheck
+{
+}
+// Task 14 autocheck
+{
+}
