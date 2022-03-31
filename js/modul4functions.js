@@ -392,49 +392,50 @@
 }
 // Task 3 autocheck
 {
-  function makePizza(pizzaName, callback) {
-  console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
-  callback(pizzaName);
-}
+    function makePizza(pizzaName, callback) {
+        console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+        callback(pizzaName);
+    }
 
-makePizza("Royal Grand", function deliverPizza(pizzaName) {
-  console.log(`Delivering pizza ${pizzaName}.`);
-});
-// Change code below this line
+    makePizza('Royal Grand', function deliverPizza(pizzaName) {
+        console.log(`Delivering pizza ${pizzaName}.`);
+    });
+    // Change code below this line
 
-makePizza("Ultracheese", function eatPizza(pizzaName){
-  console.log(`Eating pizza ${pizzaName}`);
-});
+    makePizza('Ultracheese', function eatPizza(pizzaName) {
+        console.log(`Eating pizza ${pizzaName}`);
+    });
 }
 // Task 4 autocheck
 {
-  onst pizzaPalace = {
-  pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
-  order(pizzaName, onSuccess, onError) {
-    if(!this.pizzas.includes(pizzaName)){
-      return onError(`There is no pizza with a name ${pizzaName} in the assortment.`);
+    const pizzaPalace = {
+        pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+        order(pizzaName, onSuccess, onError) {
+            if (!this.pizzas.includes(pizzaName)) {
+                return onError(
+                    `There is no pizza with a name ${pizzaName} in the assortment.`
+                );
+            }
+            return onSuccess(pizzaName);
+        },
+    };
+    // Change code above this line
+
+    // Callback for onSuccess
+    function makePizza(pizzaName) {
+        return `Your order is accepted. Cooking pizza ${pizzaName}.`;
     }
-    return onSuccess(pizzaName);
-  },
-};
-// Change code above this line
 
-// Callback for onSuccess
-function makePizza(pizzaName) {
-  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
-}
+    // Callback for onError
+    function onOrderError(error) {
+        return `Error! ${error}`;
+    }
 
-// Callback for onError
-function onOrderError(error) {
-  return `Error! ${error}`;
-}
-
-// Method calls with callbacks
-pizzaPalace.order('Smoked', makePizza, onOrderError);
-pizzaPalace.order('Four meats', makePizza, onOrderError);
-pizzaPalace.order('Big Mike', makePizza, onOrderError);
-pizzaPalace.order('Vienna', makePizza, onOrderError);
-
+    // Method calls with callbacks
+    pizzaPalace.order('Smoked', makePizza, onOrderError);
+    pizzaPalace.order('Four meats', makePizza, onOrderError);
+    pizzaPalace.order('Big Mike', makePizza, onOrderError);
+    pizzaPalace.order('Vienna', makePizza, onOrderError);
 }
 // Task 5 autocheck
 {
